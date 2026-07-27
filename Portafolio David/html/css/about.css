@@ -51,7 +51,7 @@ img {
 }
 
 /* ==========================================================================
-   2. JERARQUÍA TIPOGRÁFICA Y BOTONES
+    2. JERARQUÍA TIPOGRÁFICA Y BOTONES
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-titulos);
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   3. ESTRUCTURA CONTENEDORA Y CLASES DE UTILIDAD
+    3. ESTRUCTURA CONTENEDORA Y CLASES DE UTILIDAD
    ========================================================================== */
 .container {
     width: 90%;
@@ -123,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   4. HEADER Y NAVEGACIÓN
+    4. HEADER Y NAVEGACIÓN
    ========================================================================== */
 .header {
     position: absolute;
@@ -207,7 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   5. HERO PARALLAX ESCENARIO
+    5. HERO PARALLAX ESCENARIO
    ========================================================================== */
 .parallax-hero {
     position: relative;
@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   6. SECCIÓN INTRODUCCIÓN Y HISTORIA
+    6. SECCIÓN INTRODUCCIÓN Y HISTORIA
    ========================================================================== */
 .intro-card {
     max-width: 850px;
@@ -365,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   7. SECCIONES DE EXPERIENCIA Y EDUCACIÓN
+    7. SECCIONES DE EXPERIENCIA Y EDUCACIÓN
    ========================================================================== */
 .resume-section {
     padding: 100px 0;
@@ -549,7 +549,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   8. CARRUSEL DE HERRAMIENTAS
+    8. CARRUSEL DE HERRAMIENTAS
    ========================================================================== */
 .tools-header {
     display: flex;
@@ -681,7 +681,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   9. SECCIÓN PORTAFOLIO DE PROYECTOS (Optimizada con Alto Contraste)
+    9. SECCIÓN PORTAFOLIO DE PROYECTOS (Optimizada con Alto Contraste)
    ========================================================================== */
 .portfolio-section {
     background-color: var(--color-fondo-secundario);
@@ -857,7 +857,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   10. FOOTER
+    10. FOOTER
    ========================================================================== */
 .footer {
     background-color: #1b0a19;
@@ -995,7 +995,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   11. ANIMACIÓN DE APARICIÓN AL HACER SCROLL (.reveal)
+    11. ANIMACIÓN DE APARICIÓN AL HACER SCROLL (.reveal)
    ========================================================================== */
 .reveal {
     opacity: 1;
@@ -1016,7 +1016,7 @@ body.js-enabled .reveal.active {
 }
 
 /* ==========================================================================
-   12. DISEÑO RESPONSIVO (MEDIA QUERIES)
+    12. DISEÑO RESPONSIVO (MEDIA QUERIES)
    ========================================================================== */
 
 /* Tabletas Grandes y Desktops Pequeños (<= 1024px) */

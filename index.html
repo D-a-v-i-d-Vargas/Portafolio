@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:wght@400;700&display=swap">
 
     <!-- Enlace a tu archivo CSS externo (Ruta relativa) -->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/Portafolio David/html/css/index.css">
 
         <!-- Iconos (FontAwesome): se cargan SIN bloquear el primer pintado.
             media="print" + onload es el truco estándar para que el navegador
@@ -26,7 +26,7 @@
 
     <!-- Precarga de imágenes críticas para el Hero (Above the Fold) -->
     <link rel="preload" as="image" href="assets/home/1_home.png" fetchpriority="high">
-    <link rel="preload" as="image" href="assets/logos/full_stack_d_beige.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/Portafolio David/html/assets/logos/full_stack_d_beige.png" fetchpriority="high">
 </head>
 <body>
 
@@ -36,21 +36,21 @@
             
             <!-- Grupo Izquierdo -->
             <nav class="nav-group nav-left">
-                <a href="index.html" class="nav-link" data-i18n="nav_inicio">Inicio</a>
-                <a href="about.html" class="nav-link" data-i18n="nav_sobre_mi">Sobre Mí</a>
+                <a href="/index.html" class="nav-link" data-i18n="nav_inicio">Inicio</a>
+                <a href="/about.html" class="nav-link" data-i18n="nav_sobre_mi">Sobre Mí</a>
             </nav>
 
             <!-- Grupo Centro (Logo) -->
             <div class="nav-group nav-center">
-                <a href="index.html" class="logo">
-                    <img src="assets/logos/logo_negro.png" alt="Logotipo David Vargas" class="logo-img">
+                <a href="/index.html" class="logo">
+                    <img src="/Portafolio David/html/assets/logos/logo_negro.png" alt="Logotipo David Vargas" class="logo-img">
                 </a>
             </div>
 
             <!-- Grupo Derecho -->
             <nav class="nav-group nav-right">
-                <a href="portafolio.html" class="nav-link" data-i18n="nav_portafolio">Portafolio</a>
-                <a href="contac.html" class="nav-link" data-i18n="nav_contacto">Contáctame</a>
+                <a href="/portafolio.html" class="nav-link" data-i18n="nav_portafolio">Portafolio</a>
+                <a href="/contac.html" class="nav-link" data-i18n="nav_contacto">Contáctame</a>
                 
                 <!-- Botón de idioma integrado a la derecha -->
                 <button id="btn-idioma" class="btn-secondary lang-btn" data-i18n="btn_idioma">English</button>
@@ -70,23 +70,23 @@
 <section id="home" class="parallax-hero">
     
     <!-- Capas de imágenes (de atrás hacia adelante) -->
-    <img src="assets/home/1_home.png" class="parallax-layer layer-bg" alt="Fondo del escenario" decoding="async">
-    <img src="assets/home/2_home.png" class="parallax-layer layer-mid" alt="Elementos medios" decoding="async">
-    <img src="assets/home/3_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/4_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/5_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/6_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/7_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/8_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/9_home.png" class="parallax-layer layer-front" alt="Elementos frontales" decoding="async">
+    <img src="/Portafolio David/html/assets/home/1_home.png" class="parallax-layer layer-bg" alt="Fondo del escenario" decoding="async">
+    <img src="/Portafolio David/html/assets/home/2_home.png" class="parallax-layer layer-mid" alt="Elementos medios" decoding="async">
+    <img src="/Portafolio David/html/assets/home/3_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+    <img src="/Portafolio David/html/assets/home/4_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+    <img src="/Portafolio David/html/assets/home/5_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+    <img src="/Portafolio David/html/assets/home/6_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+    <img src="/Portafolio David/html/assets/home/7_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+    <img src="/Portafolio David/html/assets/home/8_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+    <img src="/Portafolio David/html/assets/home/9_home.png" class="parallax-layer layer-front" alt="Elementos frontales" decoding="async">
 
 <div class="hero-content parallax-content">
         
     <!-- 1. Aquí insertamos tu nueva imagen central -->
-    <img src="assets/logos/full_stack_d_beige.png" alt="Logotipo o gráfico central" class="hero-center-img" decoding="async">
+    <img src="/Portafolio David/html/assets/logos/full_stack_d_beige.png" alt="Logotipo o gráfico central" class="hero-center-img" decoding="async">
         
     <!-- 2. Mantenemos el botón intacto justo debajo -->
-    <a href="#portfolio" class="btn-primary" data-i18n="hero_btn">VER MIS PROYECTOS</a>
+    <a href="/portafolio.html" class="btn-primary" data-i18n="hero_btn">VER MIS PROYECTOS</a>
 </div>
 
 </section>
@@ -102,7 +102,7 @@
             <p class="about-desc" data-i18n="about_desc1">
                 El mejor servicio al cliente es un producto digital que no presenta fallos. Tras dominar la gestión de operaciones y el ciclo de vida del usuario, mi enfoque en la ingeniería de software radica en construir sistemas robustos y aplicaciones SaaS que revolucionen la interacción digital. No solo escribo código; arquitecto soluciones centradas en minimizar la fricción cognitiva y maximizar la retención.
             </p>
-            <a href="about.html" class="about-link"><span data-i18n="about_link">Más sobre mí</span> &rarr;</a>
+            <a href="/about.html" class="about-link"><span data-i18n="about_link">Más sobre mí</span> &rarr;</a>
         </div>
 
         <!-- Columna Derecha -->
@@ -208,7 +208,7 @@
                 </div>
                 <div class="card-image">
                     <!-- Sustituye esta imagen por una captura real de tu e-commerce -->
-                    <img src="assets/toro_forrajero.png" alt="El Toro Forrajero Ecommerce" loading="lazy" decoding="async">
+                    <img src="/Portafolio David/html/assets/toro_forrajero.png" alt="El Toro Forrajero Ecommerce" loading="lazy" decoding="async">
                 </div>
             </div>
 
@@ -229,7 +229,7 @@
                     </a>
                 </div>
                 <div class="card-image">
-                    <img src="assets/punto_adiona.png" alt="Hackaton Punto Adiona" loading="lazy" decoding="async">
+                    <img src="/Portafolio David/html/assets/punto_adiona.png" alt="Hackaton Punto Adiona" loading="lazy" decoding="async">
                 </div>
             </div>
 
@@ -256,9 +256,9 @@
             <div class="footer-links-col">
                 <h4 class="footer-heading" data-i18n="footer_pages_title">PÁGINAS</h4>
                 <ul class="footer-menu">
-                    <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
-                    <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre mí</a></li>
-                    <li><a href="portafolio.html" data-i18n="nav_portafolio">Contáctame</a></li>
+                    <li><a href="/index.html" data-i18n="nav_inicio">Inicio</a></li>
+                    <li><a href="/about.html" data-i18n="nav_sobre_mi">Sobre mí</a></li>
+                    <li><a href="/portafolio.html" data-i18n="nav_portafolio">Contáctame</a></li>
                 </ul>
             </div>
             
@@ -277,8 +277,8 @@
         <div class="footer-bottom">
             
             <div class="footer-copyright">
-                <a href="#home" class="footer-logo-link">
-                    <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img" loading="lazy" decoding="async">
+                <a href="/index.html" class="footer-logo-link">
+                    <img src="/Portafolio David/html/assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img" loading="lazy" decoding="async">
                 </a>
                 <span class="copyright-text" data-i18n="footer_copyright">Todos los derechos reservados - 2026</span>
             </div>
@@ -294,6 +294,6 @@
 </footer>
 
 <!-- El atributo 'defer' evita que el script bloquee el renderizado del DOM -->
-    <script src="js/index.js" defer></script>
+    <script src="/Portafolio David/html/js/index.js" defer></script>
 </body>
 </html>
