@@ -1,0 +1,67 @@
+@import url('index.css'); /* Importamos variables y resets básicos */
+
+body {
+    background-color: white; /* Limpio para leer código y casos de estudio */
+    overflow-y: auto;
+}
+
+.nav-secundaria {
+    background-color: var(--azul-mutado);
+    padding: 1rem 2rem;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contenedor-proyectos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.cabecera-pagina h1 {
+    color: var(--rojo-profundo);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+}
+
+.cabecera-pagina p {
+    color: var(--azul-mutado);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card-proyecto {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card-proyecto:hover {
+    transform: translateY(-5px);
+    border-color: var(--tierra);
+}
+
+.card-imagen {
+    height: 200px;
+    background-color: var(--durazno);
+}
+
+.card-contenido {
+    padding: 1.5rem;
+}
+
+.card-contenido h2 {
+    color: var(--azul-mutado);
+}

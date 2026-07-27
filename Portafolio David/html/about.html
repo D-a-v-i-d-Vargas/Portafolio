@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - David Vargas - Portafolio</title>
+    <meta name="description" content="Portafolio de David Vargas, Desarrollador Web.">
+    
+    <!-- Enlace a tu archivo CSS externo -->
+    <link rel="stylesheet" href="css/about.css">
+    
+    <!-- Iconos para redes sociales (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container header-container">
+            
+            <!-- Grupo Izquierdo -->
+            <nav class="nav-group nav-left">
+                <a href="index.html" class="nav-link" data-i18n="nav_inicio">Inicio</a>
+                <a href="about.html" class="nav-link" data-i18n="nav_sobre_mi">Sobre Mí</a>
+            </nav>
+
+            <!-- Grupo Centro (Logo) -->
+            <div class="nav-group nav-center">
+                <a href="index.html" class="logo">
+                    <img src="assets/logos/logo_negro.png" alt="Logotipo David Vargas" class="logo-img">
+                </a>
+            </div>
+
+            <!-- Grupo Derecho -->
+            <nav class="nav-group nav-right">
+                <a href="proyectos.html" class="nav-link" data-i18n="nav_portafolio">Portafolio</a>
+                <a href="#contacto" class="nav-link" data-i18n="nav_contacto">Contáctame</a>
+                
+                <!-- Botón de idioma -->
+                <button id="lang-toggle" class="btn-secondary lang-btn">ENGLISH</button>
+            </nav>
+            
+            <!-- Botón hamburguesa para móviles -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+        </div>
+    </header>
+
+    <!-- ================= MAIN BODY ================= -->
+    <main>
+        <!-- ================= HERO PARALLAX ================= -->
+        <section id="home" class="parallax-hero">
+            
+            <!-- Capas de imágenes (de atrás hacia adelante) -->
+            <img src="assets/about/about_1.png" class="parallax-layer layer-bg" alt="Fondo del escenario">
+            <img src="assets/about/about_2.png" class="parallax-layer layer-mid" alt="Elementos medios">
+            <img src="assets/about/about_3.png" class="parallax-layer layer-front" alt="Elementos medios">
+            <img src="assets/about/about_4.png" class="parallax-layer layer-front" alt="Elementos medios">
+            <img src="assets/about/about_5.png" class="parallax-layer layer-front" alt="Elementos medios">
+            <img src="assets/about/about_6.png" class="parallax-layer layer-front" alt="Elementos medios">
+            <img src="assets/about/about_7.png" class="parallax-layer layer-front" alt="Elementos medios">
+            <img src="assets/about/about_8.png" class="parallax-layer layer-front" alt="Elementos medios">
+            <img src="assets/about/about_9.png" class="parallax-layer layer-front" alt="Elementos frontales">
+
+            <!-- ================= OVERLAY DE PRESENTACIÓN ================= -->
+            <div class="hero-bio-overlay container">
+                
+                <!-- Bloque Izquierdo -->
+                <div class="bio-col-left">
+                    <div class="bio-title-wrapper">
+                        <div class="bio-header-line"></div>
+                        <h1 class="bio-title" data-i18n="hero_greeting">Un placer conocerte,<br>Soy David Vargas</h1>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <span class="stat-number">5<span class="stat-plus">+</span></span>
+                        <span class="stat-label" data-i18n="hero_stat1_label">AÑOS DE<br>EXPERIENCIA</span>
+                    </div>
+                </div>
+
+                <!-- Bloque Derecho -->
+                <div class="bio-col-right">
+                    <p class="bio-description" data-i18n="hero_desc">
+                        Ingeniero de Software enfocado en el ecosistema Frontend. Diseño y desarrollo interfaces de alto rendimiento transformando requerimientos complejos de negocio en experiencias de usuario fluidas.
+                    </p>
+                    
+                    <div class="stat-card right-card">
+                        <span class="stat-number">15<span class="stat-plus">+</span></span>
+                        <span class="stat-label" data-i18n="hero_stat2_label">PROYECTOS<br>EXITOSOS</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN DE HISTORIA / TRANSICIÓN ================= -->
+        <section class="resume-section bg-dark-alt reveal" id="historia">
+            <div class="container">
+                
+                <div class="section-header">
+                    <span class="accent-tag"><span class="slash">/</span> <span data-i18n="story_tag">EL PORQUÉ DE MI TRANSICIÓN</span></span>
+                    <div class="header-flex">
+                        <h2 class="section-title" data-i18n="story_title">De analizar el negocio a construir el software que lo escala</h2>
+                    </div>
+                </div>
+
+                <div class="story-content">
+                    <p class="story-text" data-i18n="story_p1">
+                        Durante más de media década gestionando operaciones, análisis financiero y experiencia del cliente (CX), mi trabajo consistía en identificar fricciones, analizar bases de datos y traducir las necesidades del usuario en requerimientos operativos.
+                    </p>
+                    <p class="story-text" data-i18n="story_p2">
+                        Sin embargo, constantemente me topaba con un cuello de botella sistémico: <strong>depender de terceros para implementar soluciones</strong>. Hice la transición al desarrollo de software (Full Stack Java) porque comprendí que el verdadero impacto a gran escala ocurre en la capa de código.
+                    </p>
+                    <p class="story-text" data-i18n="story_p3">
+                        Hoy, construyo arquitecturas de backend robustas y flujos de frontend sin fricción, siempre con el objetivo estricto de optimizar recursos y mover métricas reales de negocio.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN DE EXPERIENCIA ================= -->
+        <section class="resume-section bg-dark reveal" id="experiencia">
+            <div class="container">
+                
+                <div class="section-header">
+                    <span class="accent-tag"><span class="slash">/</span> <span data-i18n="exp_tag">MI EXPERIENCIA</span></span>
+                    <div class="header-flex">
+                        <h2 class="section-title" data-i18n="exp_title">Trayectoria técnica y gestión de producto</h2>
+                    </div>
+                </div>
+
+                <div class="experience-list">
+                    
+                    <!-- Rol 1 -->
+                    <article class="exp-item reveal">
+                        <div class="exp-company">
+                            <span class="company-name">Toro Forrajero</span>
+                        </div>
+                        <div class="exp-role">
+                            <h3 class="role-title" data-i18n="exp_1_role">Desarrollador Lead / Full Stack</h3>
+                            <p class="role-desc" data-i18n="exp_1_desc">Liderazgo en la arquitectura y desarrollo end-to-end de plataforma e-commerce B2C. Depuración de lógica en JavaScript, integración segura con API EmailJS y optimización de UI/UX con manejo de errores responsivo en el DOM.</p>
+                        </div>
+                        <div class="exp-date" data-i18n="exp_1_date">
+                            MAY 2026 <span class="slash">/</span> PRESENTE
+                        </div>
+                    </article>
+
+                    <!-- Rol 2 -->
+                    <article class="exp-item reveal">
+                        <div class="exp-company">
+                            <span class="company-name">One Car Now</span>
+                        </div>
+                        <div class="exp-role">
+                            <h3 class="role-title" data-i18n="exp_2_role">CX Advocate & Especialista en Datos</h3>
+                            <p class="role-desc" data-i18n="exp_2_desc">Administración de bases de datos relacionales y modelos analíticos mediante SQL. Implementación de automatizaciones en CRM y mantenimiento de integridad de datos operacionales en tiempo real para auditorías comerciales.</p>
+                        </div>
+                        <div class="exp-date" data-i18n="exp_2_date">
+                            AGO 2025 <span class="slash">/</span> ABR 2026
+                        </div>
+                    </article>
+
+                    <!-- Rol 3 -->
+                    <article class="exp-item reveal">
+                        <div class="exp-company">
+                            <span class="company-name">Blaze</span>
+                        </div>
+                        <div class="exp-role">
+                            <h3 class="role-title" data-i18n="exp_3_role">Manager de CS & Enlace Técnico</h3>
+                            <p class="role-desc" data-i18n="exp_3_desc">Liderazgo en pruebas de estrés (QA) para nuevos productos digitales. Colaboración directa con ingeniería para mitigar tiempos de carga, logrando incrementar la retención de usuarios en un 30%. Gestión de backlog con Jira.</p>
+                        </div>
+                        <div class="exp-date" data-i18n="exp_3_date">
+                            MAY 2022 <span class="slash">/</span> SEP 2023
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN DE EDUCACIÓN ================= -->
+        <section class="resume-section bg-dark-alt reveal" id="educacion">
+            <div class="container">
+                
+                <div class="section-header">
+                    <span class="accent-tag"><span class="slash">/</span> <span data-i18n="edu_tag">EDUCACIÓN Y HABILIDADES</span></span>
+                    <div class="header-flex">
+                        <h2 class="section-title" data-i18n="edu_title">Formación académica y stack tecnológico</h2>
+                        <p class="header-desc" data-i18n="edu_desc">Bases sólidas en análisis financiero integradas con desarrollo de software Full Stack para crear soluciones centradas en el usuario.</p>
+                    </div>
+                </div>
+
+                <div class="education-grid">
+                    
+                    <!-- Credencial 1 -->
+                    <article class="edu-item reveal">
+                        <span class="edu-meta" data-i18n="edu_1_meta">GENERATION MÉXICO <span class="slash">/</span> AGO 2026</span>
+                        <h3 class="edu-title" data-i18n="edu_1_title">Bootcamp Desarrollador Java Fullstack</h3>
+                        <p class="edu-desc" data-i18n="edu_1_desc">Formación intensiva especializada en arquitecturas de software conectando backend (Java) y frontend (JavaScript) bajo metodologías ágiles.</p>
+                    </article>
+
+                    <!-- Credencial 2 -->
+                    <article class="edu-item reveal">
+                        <span class="edu-meta" data-i18n="edu_2_meta">ESCUELA BANCARIA Y COMERCIAL <span class="slash">/</span> AGO 2020</span>
+                        <h3 class="edu-title" data-i18n="edu_2_title">Licenciatura en Finanzas y Banca</h3>
+                        <p class="edu-desc" data-i18n="edu_2_desc">Bases sólidas en análisis de datos, rentabilidad y entendimiento de requerimientos de negocio para traducirlos en soluciones técnicas.</p>
+                    </article>
+
+                    <!-- Credencial 3 -->
+                    <article class="edu-item reveal">
+                        <span class="edu-meta" data-i18n="edu_3_meta">CORE STACK <span class="slash">/</span> TÉCNICO</span>
+                        <h3 class="edu-title" data-i18n="edu_3_title">Herramientas de Desarrollo</h3>
+                        <p class="edu-desc" data-i18n="edu_3_desc">Dominio de Java, JavaScript, Python, SQL, MySQL, HTML5, CSS3, manipulación del DOM, integración de APIs, Git/GitHub y Jira.</p>
+                    </article>
+
+                    <!-- Credencial 4 -->
+                    <article class="edu-item reveal">
+                        <span class="edu-meta" data-i18n="edu_4_meta">COMPETENCIAS <span class="slash">/</span> BLANDAS</span>
+                        <h3 class="edu-title" data-i18n="edu_4_title">Gestión y Liderazgo</h3>
+                        <p class="edu-desc" data-i18n="edu_4_desc">Resolución de problemas complejos, atención al detalle, comunicación asertiva entre stakeholders técnicos/comerciales y enfoque UI/UX.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= SECCIÓN: FOOTER ================= -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            
+            <div class="footer-top">
+                
+                <div class="footer-cta-col">
+                    <h2 class="footer-cta-title" data-i18n="footer_cta">Construyamos algo escalable</h2>
+                    <p class="footer-text">
+                        <a href="mailto:david.vargas@email.com" class="footer-link">david.vargas@email.com</a>
+                    </p>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h4 class="footer-heading">PÁGINAS</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
+                        <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre mí</a></li>
+                        <li><a href="proyectos.html" data-i18n="nav_portafolio">Portafolio</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                
+                <div class="footer-copyright">
+                    <a href="#home" class="footer-logo-link">
+                        <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img">
+                    </a>
+                    <span class="copyright-text" data-i18n="footer_rights">Todos los derechos reservados.</span>
+                </div>
+                
+                <div class="footer-socials">
+                    <a href="https://github.com/D-a-v-i-d-Vargas" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Enlace al JS externo con ruta relativa directa -->
+    <script src="js/about.js"></script>
+</body>
+</html>
