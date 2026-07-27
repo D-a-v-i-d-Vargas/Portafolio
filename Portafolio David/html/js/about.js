@@ -2,16 +2,16 @@
 const translations = {
     es: {
         // --- NAVEGACIÓN ---
-        nav_inicio: "inicio",
-        nav_sobre_mi: "sobre mi",
-        nav_portafolio: "portafolio",
-        nav_contacto: "contáctame",
+        nav_inicio: "Inicio",
+        nav_sobre_mi: "Sobre Mí",
+        nav_portafolio: "Portafolio",
+        nav_contacto: "Contáctame",
         
-        // --- HERO ---
-        hero_greeting: "Un placer conocerte,<br>Soy David Vargas",
-        hero_desc: "Ingeniero de Software enfocado en el ecosistema Frontend. Diseño y desarrollo interfaces de alto rendimiento transformando requerimientos complejos de negocio en experiencias de usuario fluidas.",
-        hero_stat1_label: "AÑOS DE<br>EXPERIENCIA",
-        hero_stat2_label: "PROYECTOS<br>EXITOSOS",
+        // --- HERO / INTRODUCCIÓN ---
+        intro_title: "Mucho gusto, soy David Vargas",
+        intro_desc: "Ingeniero de Software enfocado en el desarrollo Frontend y soluciones web. Mi enfoque combina la visión estratégica de negocio con código limpio para construir productos digitales fluidos y escalables.",
+        stat_exp: "Años de experiencia profesional",
+        stat_projects: "Proyectos y soluciones desplegadas",
 
         // --- HISTORIA / TRANSICIÓN ---
         story_tag: "EL PORQUÉ DE MI TRANSICIÓN",
@@ -58,22 +58,32 @@ const translations = {
         edu_4_title: "Gestión y Liderazgo",
         edu_4_desc: "Resolución de problemas complejos, atención al detalle, comunicación asertiva entre stakeholders técnicos/comerciales y enfoque UI/UX.",
 
+        // --- HERRAMIENTAS ---
+        tools_tag: "MIS HERRAMIENTAS",
+        tools_title: "Tecnologías y software que utilizo en mi trabajo",
+        tool_1_desc: "Control de versiones, despliegue continuo y trabajo colaborativo en código fuente.",
+        tool_2_desc: "IDE principal configurado para desarrollo en Java, JavaScript, Python y Frontend.",
+        tool_3_desc: "Modelado de bases de datos relacionales, consultas complejas e integridad de datos.",
+        tool_4_desc: "Pruebas, validación de endpoints y documentación de arquitecturas API RESTful.",
+        tool_5_desc: "Gestión de backlog, seguimiento de sprints y priorización bajo metodología Scrum.",
+        tool_6_desc: "Inspección de prototipos, diseño de interfaces y traducción precisa de UI/UX a código.",
+
         // --- FOOTER ---
-        footer_cta: "Construyamos algo escalable",
-        footer_rights: "Todos los derechos reservados."
+        footer_cta: "¡CONSTRUYAMOS ALGO ESCALABLE!",
+        footer_rights: "Todos los derechos reservados - 2026"
     },
     en: {
         // --- NAVIGATION ---
-        nav_inicio: "home",
-        nav_sobre_mi: "about me",
-        nav_portafolio: "portfolio",
-        nav_contacto: "contact me",
+        nav_inicio: "Home",
+        nav_sobre_mi: "About Me",
+        nav_portafolio: "Portfolio",
+        nav_contacto: "Contact Me",
         
-        // --- HERO ---
-        hero_greeting: "A pleasure to meet you,<br>I'm David Vargas",
-        hero_desc: "Software Engineer focused on the Frontend ecosystem. I design and develop high-performance interfaces, transforming complex business requirements into seamless user experiences.",
-        hero_stat1_label: "YEARS OF<br>EXPERIENCE",
-        hero_stat2_label: "SUCCESSFUL<br>PROJECTS",
+        // --- HERO / INTRODUCTION ---
+        intro_title: "Nice to meet you, I'm David Vargas",
+        intro_desc: "Software Engineer focused on Frontend development and web solutions. My approach combines strategic business vision with clean code to build seamless and scalable digital products.",
+        stat_exp: "Years of professional experience",
+        stat_projects: "Projects and deployed solutions",
 
         // --- STORY / TRANSITION ---
         story_tag: "WHY I TRANSITIONED",
@@ -120,70 +130,132 @@ const translations = {
         edu_4_title: "Management & Leadership",
         edu_4_desc: "Complex problem-solving, attention to detail, assertive communication between technical/commercial stakeholders, and UI/UX focus.",
 
+        // --- TOOLS ---
+        tools_tag: "MY TOOLS",
+        tools_title: "Technologies and software I use for work",
+        tool_1_desc: "Version control, continuous deployment, and collaborative work on source code.",
+        tool_2_desc: "Primary IDE configured for Java, JavaScript, Python, and Frontend development.",
+        tool_3_desc: "Relational database modeling, complex queries, and data integrity.",
+        tool_4_desc: "Testing, endpoint validation, and RESTful API architecture documentation.",
+        tool_5_desc: "Backlog management, sprint tracking, and prioritization under Scrum methodology.",
+        tool_6_desc: "Prototype inspection, interface design, and accurate UI/UX translation into code.",
+
         // --- FOOTER ---
-        footer_cta: "Let's build something scalable",
-        footer_rights: "All rights reserved."
+        footer_cta: "LET'S BUILD SOMETHING SCALABLE!",
+        footer_rights: "All rights reserved - 2026"
     }
 };
 
-/* ================= LÓGICA DE TRADUCCIÓN (MOTOR i18n) ================= */
+/* ================= LÓGICA PRINCIPAL ================= */
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ---------------- 1. SISTEMA DE TRADUCCIÓN E IDIOMA (i18n) ----------------
     const langToggleBtn = document.getElementById('lang-toggle');
-    
-    // Validar si el botón existe para evitar errores en consola
-    if (!langToggleBtn) return;
+    const btnEs = document.getElementById('lang-es');
+    const btnEn = document.getElementById('lang-en');
 
-    let currentLang = 'es'; // Idioma por defecto en la carga inicial
+    // Función principal para cambiar los textos del DOM
+    function setLanguage(lang) {
+        if (!translations[lang]) return;
 
-    langToggleBtn.addEventListener('click', () => {
-        // Alternar el estado del idioma
-        currentLang = currentLang === 'es' ? 'en' : 'es';
-        
-        // El botón muestra el idioma al que vas a cambiar, o el actual según prefieras
-        langToggleBtn.textContent = currentLang === 'es' ? 'EN' : 'ES';
-
-        // Escanear el DOM buscando los atributos inyectados
-        const elementsToTranslate = document.querySelectorAll('[data-i18n]');
-
-        // Reemplazo en tiempo real (Big O: Lineal O(n))
-        elementsToTranslate.forEach(element => {
+        // Recorrer todos los nodos que tengan data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
-            
-            // Validar que la clave existe en el diccionario
-            if (translations[currentLang] && translations[currentLang][key]) {
-                element.innerHTML = translations[currentLang][key];
-            } else {
-                // Control de calidad: te avisa en consola si olvidaste mapear algo
-                console.warn(`[i18n Error] Falta la traducción para la clave: ${key}`);
+            if (translations[lang][key]) {
+                element.innerHTML = translations[lang][key];
             }
         });
 
-        // Opcional: Cambiar el atributo lang del HTML para SEO y accesibilidad
-        document.documentElement.lang = currentLang;
-    });
-});
-
-/* ================= INTERSECTION OBSERVER (SCROLL REVEAL) ================= */
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealCallback = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Cuando la sección entra en pantalla, activamos la animación
-            entry.target.classList.add('active');
-            // Una vez revelada, dejamos de observarla para ahorrar memoria
-            observer.unobserve(entry.target);
+        // Actualizar el botón principal del Header
+        if (langToggleBtn) {
+            langToggleBtn.textContent = lang === 'es' ? 'ENGLISH' : 'ESPAÑOL';
         }
-    });
-};
 
-const revealOptions = {
-    root: null,
-    threshold: 0.15 // Se activa cuando el 15% de la sección es visible
-};
+        // Persistir idioma en LocalStorage
+        localStorage.setItem('preferred_lang', lang);
+    }
 
-const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+    // Evento para el botón Toggle del Header
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('preferred_lang') || 'es';
+            const nextLang = currentLang === 'es' ? 'en' : 'es';
+            setLanguage(nextLang);
+        });
+    }
 
-revealElements.forEach(element => {
-    revealObserver.observe(element);
+    // Eventos para las opciones del Footer
+    if (btnEs) {
+        btnEs.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLanguage('es');
+        });
+    }
+
+    if (btnEn) {
+        btnEn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLanguage('en');
+        });
+    }
+
+    // Inicializar idioma guardado o por defecto (Español)
+    const initialLang = localStorage.getItem('preferred_lang') || 'es';
+    setLanguage(initialLang);
+
+
+    // ---------------- 2. CARRUSEL DE HERRAMIENTAS ----------------
+    const track = document.getElementById('tools-track');
+    const prevBtn = document.getElementById('tools-prev');
+    const nextBtn = document.getElementById('tools-next');
+
+    if (track && prevBtn && nextBtn) {
+        const scrollAmount = 320; // Píxeles a desplazar por clic
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
+
+
+    // ---------------- 3. ANIMACIÓN DE APARICIÓN EN SCROLL (.reveal) ----------------
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window && revealElements.length > 0) {
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+        // Fallback: mostrar elementos si IntersectionObserver no es soportado
+        revealElements.forEach(el => el.classList.add('active'));
+    }
+
+
+    // ---------------- 4. NAVEGACIÓN MÓVIL (MENÚ HAMBURGUESA) ----------------
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLeft = document.querySelector('.nav-left');
+    const navRight = document.querySelector('.nav-right');
+
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('open');
+            if (navLeft) navLeft.classList.toggle('active');
+            if (navRight) navRight.classList.toggle('active');
+        });
+    }
 });

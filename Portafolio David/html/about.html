@@ -33,8 +33,8 @@
 
             <!-- Grupo Derecho -->
             <nav class="nav-group nav-right">
-                <a href="proyectos.html" class="nav-link" data-i18n="nav_portafolio">Portafolio</a>
-                <a href="#contacto" class="nav-link" data-i18n="nav_contacto">Contáctame</a>
+                <a href="portafolio.html" class="nav-link" data-i18n="nav_portafolio">Portafolio</a>
+                <a href="contac.html" class="nav-link" data-i18n="nav_contacto">Contáctame</a>
                 
                 <!-- Botón de idioma -->
                 <button id="lang-toggle" class="btn-secondary lang-btn">ENGLISH</button>
@@ -66,35 +66,44 @@
 
             <!-- ================= OVERLAY DE PRESENTACIÓN ================= -->
             <div class="hero-bio-overlay container">
-                
-                <!-- Bloque Izquierdo -->
-                <div class="bio-col-left">
-                    <div class="bio-title-wrapper">
-                        <div class="bio-header-line"></div>
-                        <h1 class="bio-title" data-i18n="hero_greeting">Un placer conocerte,<br>Soy David Vargas</h1>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <span class="stat-number">5<span class="stat-plus">+</span></span>
-                        <span class="stat-label" data-i18n="hero_stat1_label">AÑOS DE<br>EXPERIENCIA</span>
-                    </div>
-                </div>
-
-                <!-- Bloque Derecho -->
-                <div class="bio-col-right">
-                    <p class="bio-description" data-i18n="hero_desc">
-                        Ingeniero de Software enfocado en el ecosistema Frontend. Diseño y desarrollo interfaces de alto rendimiento transformando requerimientos complejos de negocio en experiencias de usuario fluidas.
-                    </p>
-                    
-                    <div class="stat-card right-card">
-                        <span class="stat-number">15<span class="stat-plus">+</span></span>
-                        <span class="stat-label" data-i18n="hero_stat2_label">PROYECTOS<br>EXITOSOS</span>
-                    </div>
-                </div>
 
             </div>
         </section>
 
+                <!-- ================= SECCIÓN INTRODUCCIÓN / PRESENTACIÓN ================= -->
+        <section class="resume-section bg-dark-alt reveal" id="introduccion">
+            <div class="container">
+                <div class="intro-card">
+                    
+                    <!-- Línea decorativa superior -->
+                    <div class="intro-header-line"></div>
+                    
+                    <!-- Título de Saludo -->
+                    <h2 class="intro-title" data-i18n="intro_title">Mucho gusto, soy David Vargas</h2>
+                    
+                    <!-- Breve Descripción / Subtexto -->
+                    <p class="intro-desc" data-i18n="intro_desc">
+                        Ingeniero de Software enfocado en el desarrollo Frontend y soluciones web. Mi enfoque combina la visión estratégica de negocio con código limpio para construir productos digitales fluidos y escalables.
+                    </p>
+                    
+                    <!-- Línea divisoria central -->
+                    <div class="intro-divider"></div>
+                    
+                    <!-- Fila de Estadísticas / Métricas -->
+                    <div class="intro-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5<span class="stat-plus">+</span></span>
+                            <span class="stat-label" data-i18n="stat_exp">AÑOS DE EXPERIENCIA PROFESIONAL</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10<span class="stat-plus">+</span></span>
+                            <span class="stat-label" data-i18n="stat_projects">PROYECTOS Y SOLUCIONES DESPLEGADAS</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         <!-- ================= SECCIÓN DE HISTORIA / TRANSICIÓN ================= -->
         <section class="resume-section bg-dark-alt reveal" id="historia">
             <div class="container">
@@ -122,7 +131,7 @@
         </section>
 
         <!-- ================= SECCIÓN DE EXPERIENCIA ================= -->
-        <section class="resume-section bg-dark reveal" id="experiencia">
+        <section class="resume-section bg-light reveal" id="experiencia">
             <div class="container">
                 
                 <div class="section-header">
@@ -181,7 +190,7 @@
         </section>
 
         <!-- ================= SECCIÓN DE EDUCACIÓN ================= -->
-        <section class="resume-section bg-dark-alt reveal" id="educacion">
+        <section class="resume-section bg-dark reveal" id="educacion">
             <div class="container">
                 
                 <div class="section-header">
@@ -225,49 +234,154 @@
                 </div>
             </div>
         </section>
+
+        <!-- ================= SECCIÓN DE HERRAMIENTAS (CARRUSEL) ================= -->
+        <section class="resume-section bg-dark-alt reveal" id="herramientas">
+            <div class="container">
+                
+                <div class="tools-header">
+                    <div class="section-header-left">
+                        <span class="accent-tag"><span class="slash">/</span> <span data-i18n="tools_tag">MIS HERRAMIENTAS</span></span>
+                        <h2 class="section-title" data-i18n="tools_title">Tecnologías y software que utilizo en mi trabajo</h2>
+                    </div>
+                    
+                    <!-- Botones de navegación del carrusel -->
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" id="tools-prev" aria-label="Anterior">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" id="tools-next" aria-label="Siguiente">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contenedor del Carrusel -->
+                <div class="tools-carousel-container">
+                    <div class="tools-track" id="tools-track">
+                        
+                        <!-- Tarjeta 1 -->
+                        <div class="tool-card">
+                            <div class="tool-icon-wrapper">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3 class="tool-name">GitHub & Git</h3>
+                            <p class="tool-desc" data-i18n="tool_1_desc">Control de versiones, despliegue continuo y trabajo colaborativo en código fuente.</p>
+                            <span class="tool-badge">DEV OPS</span>
+                        </div>
+
+                        <!-- Tarjeta 2 -->
+                        <div class="tool-card">
+                            <div class="tool-icon-wrapper">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="tool-name">VS Code</h3>
+                            <p class="tool-desc" data-i18n="tool_2_desc">IDE principal configurado para desarrollo en Java, JavaScript, Python y Frontend.</p>
+                            <span class="tool-badge">EDITOR</span>
+                        </div>
+
+                        <!-- Tarjeta 3 -->
+                        <div class="tool-card">
+                            <div class="tool-icon-wrapper">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3 class="tool-name">MySQL & SQL</h3>
+                            <p class="tool-desc" data-i18n="tool_3_desc">Modelado de bases de datos relacionales, consultas complejas e integridad de datos.</p>
+                            <span class="tool-badge">DATABASE</span>
+                        </div>
+
+                        <!-- Tarjeta 4 -->
+                        <div class="tool-card">
+                            <div class="tool-icon-wrapper">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <h3 class="tool-name">Postman</h3>
+                            <p class="tool-desc" data-i18n="tool_4_desc">Pruebas, validación de endpoints y documentación de arquitecturas API RESTful.</p>
+                            <span class="tool-badge">API TESTING</span>
+                        </div>
+
+                        <!-- Tarjeta 5 -->
+                        <div class="tool-card">
+                            <div class="tool-icon-wrapper">
+                                <i class="fab fa-jira"></i>
+                            </div>
+                            <h3 class="tool-name">Jira & Agile</h3>
+                            <p class="tool-desc" data-i18n="tool_5_desc">Gestión de backlog, seguimiento de sprints y priorización bajo metodología Scrum.</p>
+                            <span class="tool-badge">AGILE</span>
+                        </div>
+
+                        <!-- Tarjeta 6 -->
+                        <div class="tool-card">
+                            <div class="tool-icon-wrapper">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                            <h3 class="tool-name">Figma</h3>
+                            <p class="tool-desc" data-i18n="tool_6_desc">Inspección de prototipos, diseño de interfaces y traducción precisa de UI/UX a código.</p>
+                            <span class="tool-badge">UI/UX</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- ================= SECCIÓN: FOOTER ================= -->
     <footer id="contacto" class="footer">
-        <div class="container">
+    <div class="container footer-container">
+        
+        <!-- PARTE SUPERIOR (3 COLUMNAS) -->
+        <div class="footer-top">
             
-            <div class="footer-top">
-                
-                <div class="footer-cta-col">
-                    <h2 class="footer-cta-title" data-i18n="footer_cta">Construyamos algo escalable</h2>
-                    <p class="footer-text">
-                        <a href="mailto:david.vargas@email.com" class="footer-link">david.vargas@email.com</a>
-                    </p>
-                </div>
-                
-                <div class="footer-links-col">
-                    <h4 class="footer-heading">PÁGINAS</h4>
-                    <ul class="footer-menu">
-                        <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
-                        <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre mí</a></li>
-                        <li><a href="proyectos.html" data-i18n="nav_portafolio">Portafolio</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                
-                <div class="footer-copyright">
-                    <a href="#home" class="footer-logo-link">
-                        <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img">
-                    </a>
-                    <span class="copyright-text" data-i18n="footer_rights">Todos los derechos reservados.</span>
-                </div>
-                
-                <div class="footer-socials">
-                    <a href="https://github.com/D-a-v-i-d-Vargas" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                </div>
-
+            <!-- Columna 1: Llamada a la acción -->
+            <div class="footer-cta-col">
+                <h2 class="footer-cta-title" data-i18n="footer_cta">¡CONSTRUTAMOS ALGO ESCALABLE!</h2>
+                <p class="footer-text">
+                    ¡Hablemos de tu proyecto! <a href="mailto:david.vargas@email.com" class="footer-link" data-i18n="nav_contacto">Contáctame</a>
+                </p>
             </div>
             
+            <!-- Columna 2: Páginas -->
+            <div class="footer-links-col">
+                <h4 class="footer-heading">PÁGINAS</h4>
+                <ul class="footer-menu">
+                    <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
+                    <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre Mí</a></li>
+                    <li><a href="portafolio.html" data-i18n="nav_portafolio">Portafolio</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Idiomas (Mover aquí dentro de footer-top) -->
+            <div class="footer-links-col">
+                <h4 class="footer-heading">IDIOMAS</h4>
+                <ul class="footer-menu">
+                    <li><a href="#" id="lang-es">Español</a></li>
+                    <li><a href="#" id="lang-en">Inglés</a></li>
+                </ul>
+            </div>
+
         </div>
+
+        <!-- PARTE INFERIOR (2 EXTREMOS: LOGO A LA IZQUIERDA Y REDES A LA DERECHA) -->
+        <div class="footer-bottom">
+            
+            <div class="footer-copyright">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img">
+                </a>
+                <span class="copyright-text" data-i18n="footer_rights">Todos los derechos reservados - 2026</span>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="https://github.com/D-a-v-i-d-Vargas" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+        </div>
+        
+    </div>
     </footer>
 
     <!-- Enlace al JS externo con ruta relativa directa -->
