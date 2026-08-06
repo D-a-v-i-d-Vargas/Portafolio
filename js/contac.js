@@ -46,11 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {string} lang - 'es' o 'en'
      */
     function setLanguage(lang) {
-        // Guardar preferencia local y actualizar atributo HTML
         localStorage.setItem('preferredLang', lang);
         document.documentElement.lang = lang;
 
-        // Actualizar todos los elementos con data-i18n
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (translations[lang] && translations[lang][key]) {
@@ -58,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Actualizar el texto del botón principal del header
         if (langToggleBtn) {
             if (lang === 'es') {
                 langToggleBtn.textContent = 'ENGLISH';
@@ -70,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Evento: Botón alternador del Header
     if (langToggleBtn) {
         langToggleBtn.addEventListener('click', () => {
             const currentLang = localStorage.getItem('preferredLang') || 'es';
@@ -79,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Evento: Opción Español del Footer
     if (langEsBtn) {
         langEsBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -87,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Evento: Opción Inglés del Footer
     if (langEnBtn) {
         langEnBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -95,9 +89,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Inicialización: Cargar idioma guardado o español por defecto
     const savedLang = localStorage.getItem('preferredLang') || 'es';
     setLanguage(savedLang);
+
+    // ==========================================
+    // NUEVO: Efecto Radial Glow Mouse Tracker
+    // ==========================================
+    const radialGlow = document.querySelector('.radial-glow');
+    if(radialGlow) {
+        document.addEventListener('mousemove', (e) => {
+            const rect = radialGlow.getBoundingClientRect();
+            // Calcular la posición relativa del ratón respecto al contenedor
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Inyectar las variables CSS
+            radialGlow.style.setProperty('--mouse-x', `${x}px`);
+            radialGlow.style.setProperty('--mouse-y', `${y}px`);
+        });
+    }
+
+    // ==========================================
+    // Animación Reveal al hacer Scroll
+    // ==========================================
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100;
+        
+        reveals.forEach((reveal) => {
+            const elementTop = reveal.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Llamar una vez al cargar
 });
 
 // Manejo del envío del formulario con EmailJS
@@ -107,7 +135,6 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Cambiar texto del botón a "Enviando..."
         const submitBtn = this.querySelector('.contact-submit-btn span');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Enviando...';
@@ -115,7 +142,7 @@ if (contactForm) {
         emailjs.sendForm('service_vbxb515', 'template_yxy2lo5', this)
             .then(() => {
                 alert('¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.');
-                contactForm.reset(); // Limpiar campos
+                contactForm.reset();
                 submitBtn.textContent = originalText;
             }, (error) => {
                 alert('Ocurrió un error al enviar el mensaje. Inténtalo de nuevo.');

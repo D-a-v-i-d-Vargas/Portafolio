@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(87, 136, 50, 0.12), transparent 40%);
+    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(154, 220, 103, 0.216), transparent 30%);
     pointer-events: none;
     z-index: 0;
     opacity: 0; 
@@ -295,33 +295,15 @@ h1, h2, h3, h4, h5, h6 {
     animation: subirCapa 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards; 
 }
 
-.parallax-hero img:nth-child(1), .parallax-layer:nth-child(1) { 
-    animation-delay: 0.1s; 
-}
-.parallax-hero img:nth-child(2), .parallax-layer:nth-child(2) { 
-    animation-delay: 0.3s; 
-}
-.parallax-hero img:nth-child(3), .parallax-layer:nth-child(3) { 
-    animation-delay: 0.5s; 
-}
-.parallax-hero img:nth-child(4), .parallax-layer:nth-child(4) { 
-    animation-delay: 0.7s; 
-}
-.parallax-hero img:nth-child(5), .parallax-layer:nth-child(5) { 
-    animation-delay: 0.9s; 
-}
-.parallax-hero img:nth-child(6), .parallax-layer:nth-child(6) { 
-    animation-delay: 1.1s; 
-}
-.parallax-hero img:nth-child(7), .parallax-layer:nth-child(7) { 
-    animation-delay: 1.3s; 
-}
-.parallax-hero img:nth-child(8), .parallax-layer:nth-child(8) { 
-    animation-delay: 1.5s; 
-}
-.parallax-hero img:nth-child(9), .parallax-layer:nth-child(9) { 
-    animation-delay: 1.7s; 
-}
+.parallax-hero img:nth-child(1), .parallax-layer:nth-child(1) { animation-delay: 0.1s; }
+.parallax-hero img:nth-child(2), .parallax-layer:nth-child(2) { animation-delay: 0.3s; }
+.parallax-hero img:nth-child(3), .parallax-layer:nth-child(3) { animation-delay: 0.5s; }
+.parallax-hero img:nth-child(4), .parallax-layer:nth-child(4) { animation-delay: 0.7s; }
+.parallax-hero img:nth-child(5), .parallax-layer:nth-child(5) { animation-delay: 0.9s; }
+.parallax-hero img:nth-child(6), .parallax-layer:nth-child(6) { animation-delay: 1.1s; }
+.parallax-hero img:nth-child(7), .parallax-layer:nth-child(7) { animation-delay: 1.3s; }
+.parallax-hero img:nth-child(8), .parallax-layer:nth-child(8) { animation-delay: 1.5s; }
+.parallax-hero img:nth-child(9), .parallax-layer:nth-child(9) { animation-delay: 1.7s; }
 
 .layer-bg { 
     z-index: 1; 

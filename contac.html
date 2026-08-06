@@ -12,18 +12,17 @@
     <!-- Iconos para redes sociales y botones (FontAwesome 6.5) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
     (function(){
-        emailjs.init("BF7t_B_RVmAQQc3Zz"); // Reemplaza por tu Public Key de EmailJS
+        emailjs.init("BF7t_B_RVmAQQc3Zz");
     })();
     </script>
-
 </head>
 <body>
 
     <!-- ================= HEADER ================= -->
-    <header class="header">
+    <header class="header elegant-header">
         <div class="container header-container">
             
             <!-- Grupo Izquierdo -->
@@ -35,7 +34,7 @@
             <!-- Grupo Centro (Logo) -->
             <div class="nav-group nav-center">
                 <a href="index.html" class="logo">
-                    <img src="assets/logos/logo_blanco.png" alt="Logotipo David Vargas" class="logo-img">
+                    <img src="assets/logos/logo_negro.png" alt="Logotipo David Vargas" class="logo-img">
                 </a>
             </div>
 
@@ -56,113 +55,121 @@
         </div>
     </header>
 
-    <!-- ================= MAIN BODY ================= -->
-    <main>
-        <!-- ================= HERO PARALLAX ================= -->
-        <section id="home" class="parallax-hero">
-            <!-- Capas de imágenes -->
-            <img src="assets/contac/contacto_1.png" class="parallax-layer layer-bg" alt="Fondo del escenario">
-            <img src="assets/contac/contacto_2.png" class="parallax-layer layer-mid" alt="Elementos medios">
-            <img src="assets/contac/contacto_3.png" class="parallax-layer layer-front" alt="Elementos medios">
-            <img src="assets/contac/contacto_4.png" class="parallax-layer layer-front" alt="Elementos medios">
-            <img src="assets/contac/contacto_5.png" class="parallax-layer layer-front" alt="Elementos medios">
-            <img src="assets/contac/contacto_6.png" class="parallax-layer layer-front" alt="Elementos medios">
-            <img src="assets/contac/contacto_7.png" class="parallax-layer layer-front" alt="Elementos medios">
-            <img src="assets/contac/contacto_8.png" class="parallax-layer layer-front" alt="Elementos medios">
-            <img src="assets/contac/contacto_9.png" class="parallax-layer layer-front" alt="Elementos frontales">
-            
-            <div class="hero-bio-overlay container"></div>
-        </section>
-
-        <!-- ================= SECCIÓN DE CONTACTO ================= -->
-        <section class="section contact-section">
-            <div class="container">
+    <!-- Envoltorio Radial Glow -->
+    <div class="radial-glow">
+        
+        <!-- ================= MAIN BODY ================= -->
+        <main>
+            <!-- ================= HERO PARALLAX ================= -->
+            <section id="home" class="parallax-hero">
+                <!-- Capas de imágenes -->
+                <img src="assets/contac/contacto_1.png" class="parallax-layer layer-bg" alt="Fondo del escenario">
+                <img src="assets/contac/contacto_2.png" class="parallax-layer layer-mid" alt="Elementos medios">
+                <img src="assets/contac/contacto_3.png" class="parallax-layer layer-front" alt="Elementos medios">
+                <img src="assets/contac/contacto_4.png" class="parallax-layer layer-front" alt="Elementos medios">
+                <img src="assets/contac/contacto_5.png" class="parallax-layer layer-front" alt="Elementos medios">
+                <img src="assets/contac/contacto_6.png" class="parallax-layer layer-front" alt="Elementos medios">
+                <img src="assets/contac/contacto_7.png" class="parallax-layer layer-front" alt="Elementos medios">
+                <img src="assets/contac/contacto_8.png" class="parallax-layer layer-front" alt="Elementos medios">
+                <img src="assets/contac/contacto_9.png" class="parallax-layer layer-front" alt="Elementos frontales">
                 
-                <!-- Encabezado con línea distintiva -->
-                <div class="contact-header">
-                    <div class="intro-header-line"></div>
-                    <h1 class="contact-main-title" data-i18n="contact_title">Trabajemos juntos</h1>
-                </div>
+                <div class="hero-bio-overlay container"></div>
+            </section>
 
-                <!-- Grid principal de dos columnas -->
-                <div class="contact-grid">
+            <!-- ================= SECCIÓN DE CONTACTO ================= -->
+            <section class="section contact-section">
+                <div class="container">
                     
-                    <!-- Columna Izquierda: Información + Redes -->
-                    <div class="contact-info">
-                        <h2 class="contact-subtitle" data-i18n="contact_subtitle">¡Contacta conmigo!</h2>
-                        <p class="contact-desc" data-i18n="contact_desc">
-                            ¿Tienes un proyecto en mente o quieres crear algo escalable? Envíame un mensaje y nos pondremos en contacto a la brevedad.
-                        </p>
+                    <!-- Encabezado con línea distintiva -->
+                    <div class="contact-header reveal">
+                        <div class="intro-header-line"></div>
+                        <h1 class="contact-main-title" data-i18n="contact_title">Trabajemos juntos</h1>
+                    </div>
+
+                    <!-- Grid principal de dos columnas -->
+                    <div class="contact-grid">
                         
-                        <div class="contact-socials">
-                            <a href="https://github.com/D-a-v-i-d-Vargas" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="contact-social-link">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="contact-social-link">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Columna Derecha: Tarjeta Estilizada con Formulario -->
-                    <div class="contact-form-card">
-                        <form class="contact-form" action="#" method="POST">
+                        <!-- Columna Izquierda: Información + Redes -->
+                        <div class="contact-info reveal">
+                            <h2 class="contact-subtitle" data-i18n="contact_subtitle">¡Contacta conmigo!</h2>
+                            <p class="contact-desc" data-i18n="contact_desc">
+                                ¿Tienes un proyecto en mente o quieres crear algo escalable? Envíame un mensaje y nos pondremos en contacto a la brevedad.
+                            </p>
                             
-                            <div class="form-group">
-                                <label for="name" class="form-label" data-i18n="form_name">Ingresa tu nombre</label>
-                                <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
+                            <div class="contact-socials">
+                                <a href="https://github.com/D-a-v-i-d-Vargas" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="contact-social-link">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="contact-social-link">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="email" class="form-label" data-i18n="form_email">Ingresa tu correo electronico</label>
-                                <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required>
-                            </div>
+                        <!-- Columna Derecha: Tarjeta Estilizada con Formulario -->
+                        <div class="contact-form-card reveal">
+                            <form class="contact-form" action="#" method="POST">
+                                
+                                <div class="form-group">
+                                    <label for="name" class="form-label" data-i18n="form_name">Ingresa tu nombre</label>
+                                    <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="subject" class="form-label" data-i18n="form_subject">Asunto</label>
-                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Asunto del mensaje" required>
-                            </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label" data-i18n="form_email">Ingresa tu correo electronico</label>
+                                    <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="message" class="form-label" data-i18n="form_message">Escribe tu mensaje</label>
-                                <textarea id="message" name="message" class="form-input form-textarea" rows="3" placeholder="Escribe tu mensaje..." required></textarea>
-                            </div>
+                                <div class="form-group">
+                                    <label for="subject" class="form-label" data-i18n="form_subject">Asunto</label>
+                                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Asunto del mensaje" required>
+                                </div>
 
-                            <button type="submit" class="contact-submit-btn">
-                                <span data-i18n="form_submit">Contactame</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
+                                <div class="form-group">
+                                    <label for="message" class="form-label" data-i18n="form_message">Escribe tu mensaje</label>
+                                    <textarea id="message" name="message" class="form-input form-textarea" rows="3" placeholder="Escribe tu mensaje..." required></textarea>
+                                </div>
 
-                        </form>
+                                <button type="submit" class="contact-submit-btn">
+                                    <span data-i18n="form_submit">Contactame</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+
+                            </form>
+                        </div>
+
                     </div>
-
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <!-- ================= SECCIÓN: FOOTER ================= -->
+    <!-- ================= FOOTER ================= -->
+    <!-- clases 'reveal' para darle vida al scroll del footer -->
     <footer id="contacto" class="footer">
         <div class="container footer-container">
-            
             <div class="footer-top">
-                <div class="footer-cta-col">
+                <div class="footer-cta-col reveal-left">
                     <h2 class="footer-cta-title" data-i18n="footer_cta">¡CONSTRUYAMOS ALGO ESCALABLE!</h2>
-                    <p class="footer-text">
-                        ¡Hablemos de tu proyecto! <a href="mailto:david.vargas@email.com" class="footer-link" data-i18n="nav_contacto">Contáctame</a>
-                    </p>
+                    <p class="footer-text" data-i18n="footer_text">¡Hablemos de tu proyecto, enviame un email!</p>
+                    
+                    <!--  Estructura necesaria para la animación de Uiverse aquí -->
+                    <a href="mailto:david.vargas011@ebc.edu.mx" class="footer-link-container">
+                        <p data-i18n="nav_contacto" data-text="Contáctame">Contáctame</p>
+                        <svg viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                        </svg>
+                    </a>
                 </div>
-                
-                <div class="footer-links-col">
+                <div class="footer-links-col reveal-down">
                     <h4 class="footer-heading">PÁGINAS</h4>
                     <ul class="footer-menu">
                         <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
                         <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre Mí</a></li>
                         <li><a href="portafolio.html" data-i18n="nav_portafolio">Portafolio</a></li>
+                        <li><a href="contac.html" data-i18n="nav_contacto">Contáctame</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-links-col">
+                <div class="footer-links-col reveal-right">
                     <h4 class="footer-heading">IDIOMAS</h4>
                     <ul class="footer-menu">
                         <li><a href="#" id="lang-es">Español</a></li>
@@ -170,21 +177,18 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
+            <div class="footer-bottom reveal">
                 <div class="footer-copyright">
                     <a href="index.html" class="footer-logo-link">
                         <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img">
                     </a>
                     <span class="copyright-text" data-i18n="footer_rights">Todos los derechos reservados - 2026</span>
                 </div>
-                
                 <div class="footer-socials">
-                    <a href="https://github.com/D-a-v-i-d-Vargas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/D-a-v-i-d-Vargas" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            
         </div>
     </footer>
 
