@@ -15,9 +15,7 @@
 :root {
     --color-cafe: #59332a;
     --color-naranja: #db864d;
-    --color-verde: #4B5C35;
-    --color-amarillo: #f1a945;
-    
+    --color-amarillo: #f1a945;    
     --color-fondo: #0a0c10;
     --color-fondo-tarjeta: #181c27;
     --color-fondo-secundario: #0e1117;
@@ -213,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link {
-    color: var(--color-verde-fuerte);
+    color: var(--color-blanco);
     font-weight: 700;
     font-size: 18px;
     text-transform: capitalize; 
@@ -233,9 +231,9 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     padding: 6px 12px;
     font-size: 14px;
-    border: 1px solid var(--color-verde-fuerte);
+    border: 1px solid var(--color-blanco);
     background: transparent;
-    color: var(--color-verde-fuerte);
+    color: var(--color-blanco);
     font-family: var(--font-botones);
     transition: all 0.3s ease;
 }
@@ -378,18 +376,18 @@ h1, h2, h3, h4, h5, h6 {
     height: 45px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--color-blanco);
+    border: 1px solid var(--color-naranja);
+    color: var(--color-naranja);
     font-size: 1.2rem;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
 }
 
 .contact-social-link:hover {
-    background-color: var(--color-naranja);
+    background-color: var(--color-cafe);
     border-color: var(--color-naranja);
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(219, 134, 77, 0.3);
+    box-shadow: 0 10px 20px var(--color-cafe);
 }
 
 /* Columna Derecha (Tarjeta del Formulario) */
@@ -405,7 +403,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-form-card:hover {
-    border-color: rgba(219, 134, 77, 0.3);
+    border-color: var(--color-cafe);
     transform: translateY(-5px);
 }
 
@@ -425,7 +423,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-botones);
     font-size: 0.95rem;
     font-weight: 600;
-    color: rgba(255,255,255,0.9);
+    color: var(--color-naranja);
     letter-spacing: 0.5px;
 }
 
@@ -433,7 +431,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     background: transparent !important;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(219, 134, 77, 0.3);
     padding: 10px 0;
     font-family: var(--font-parrafos);
     font-size: 1rem;
@@ -548,9 +546,9 @@ h1, h2, h3, h4, h5, h6 {
 .footer-socials a { 
     width: 38px; 
     height: 38px; 
-    border: 2px solid var(--color-naranja); 
+    border: 2px solid var(--color-amarillo); 
     border-radius: 50%; 
-    color: var(--color-naranja); 
+    color: var(--color-amarillo); 
     display: flex; 
     align-items: center; 
     justify-content: center; 
@@ -559,7 +557,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-socials a:hover { 
-    background-color: var(--color-naranja); 
+    background-color: var(--color-amarillo); 
     color: var(--color-fondo); 
 }
 
@@ -629,19 +627,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-    ANIMACIÓN REVEAL SCROLL
+    10. ANIMACIONES DE SCROLL ALTERNADAS Y DE DIRECCIÓN (.reveal-*)
    ========================================================================== */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
+.reveal, .reveal-down, .reveal-left, .reveal-right {
+    opacity: 1;
+    transform: translate(0, 0);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
 }
 
-.reveal.active {
+body.js-enabled .reveal:not(.active) { 
+    opacity: 0; 
+    transform: translateY(40px); 
+}
+
+body.js-enabled .reveal-down:not(.active) { 
+    opacity: 0; 
+    transform: translateY(-40px); 
+}
+
+body.js-enabled .reveal-left:not(.active) { 
+    opacity: 0; 
+    transform: translateX(-50px); 
+}
+
+body.js-enabled .reveal-right:not(.active) { 
+    opacity: 0; 
+    transform: translateX(50px); 
+}
+
+body.js-enabled .reveal.active,
+body.js-enabled .reveal-down.active,
+body.js-enabled .reveal-left.active,
+body.js-enabled .reveal-right.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0, 0);
 }
 
 /* ==========================================================================

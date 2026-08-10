@@ -125,9 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (translations[lang][key]) {
                 element.innerHTML = translations[lang][key];
                 
-                // Inyecté esta línea clave: si el elemento tiene un atributo "data-text"
-                // (usado por nuestro nuevo botón animado en CSS), también lo actualiza 
-                // dinámicamente para que la animación CSS muestre el idioma correcto.
+                /* Inyecté esta línea clave: si el elemento tiene un atributo "data-text"
+                (usado por nuestro nuevo botón animado en CSS), también lo actualiza 
+                dinámicamente para que la animación CSS muestre el idioma correcto.*/
                 if (element.hasAttribute('data-text')) {
                     element.setAttribute('data-text', translations[lang][key]);
                 }
