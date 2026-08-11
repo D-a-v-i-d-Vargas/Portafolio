@@ -6,57 +6,42 @@
     <title>Home - David Vargas - Portafolio</title>
     <meta name="description" content="Portafolio de David Vargas, Desarrollador Web.">
     
-    <!-- Conexiones tempranas a dominios externos: ahorra el handshake DNS/TLS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-
-        <!-- Fuentes: antes se cargaban con @import dentro del CSS (bloqueaba en cadena).
-            Ahora se piden aquí para que salgan en paralelo con el resto. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:wght@400;700&display=swap">
 
-    <!-- Enlace a tu archivo CSS externo (Ruta relativa) -->
     <link rel="stylesheet" href="css/index.css">
 
-        <!-- Iconos (FontAwesome): se cargan SIN bloquear el primer pintado.
-            media="print" + onload es el truco estándar para que el navegador
-            no espere esta hoja pesada antes de mostrar la página. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
-    <!-- Precarga de imágenes críticas para el Hero (Above the Fold) -->
     <link rel="preload" as="image" href="assets/home/1_home.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/logos/full_stack_d_beige.png" fetchpriority="high">
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
+    <!-- ================= HEADER ================= -->
     <header class="header">
         <div class="container header-container">
             
-            <!-- Grupo Izquierdo -->
             <nav class="nav-group nav-left">
                 <a href="index.html" class="nav-link" data-i18n="nav_inicio">Inicio</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_sobre_mi">Sobre Mí</a>
             </nav>
 
-            <!-- Grupo Centro (Logo) -->
             <div class="nav-group nav-center">
                 <a href="index.html" class="logo">
                     <img src="assets/logos/logo_negro.png" alt="Logotipo David Vargas" class="logo-img">
                 </a>
             </div>
 
-            <!-- Grupo Derecho -->
             <nav class="nav-group nav-right">
                 <a href="portafolio.html" class="nav-link" data-i18n="nav_portafolio">Portafolio</a>
                 <a href="contac.html" class="nav-link" data-i18n="nav_contacto">Contáctame</a>
-                
-                <!-- Botón de idioma integrado a la derecha -->
-                <button id="btn-idioma" class="btn-secondary lang-btn" data-i18n="btn_idioma">English</button>
+                <button id="lang-toggle" class="btn-secondary lang-btn">ENGLISH</button>
             </nav>
             
-            <!-- Botón hamburguesa para móviles -->
             <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -64,236 +49,220 @@
         </div>
     </header>
 
-    <!-- ================= MAIN BODY ================= -->
-    <main>
+<main>
         <!-- ================= HERO PARALLAX (CAPAS) ================= -->
-<section id="home" class="parallax-hero">
-    
-    <!-- Capas de imágenes (de atrás hacia adelante) -->
-    <img src="assets/home/1_home.png" class="parallax-layer layer-bg" alt="Fondo del escenario" decoding="async">
-    <img src="assets/home/2_home.png" class="parallax-layer layer-mid" alt="Elementos medios" decoding="async">
-    <img src="assets/home/3_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/4_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/5_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/6_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/7_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/8_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
-    <img src="assets/home/9_home.png" class="parallax-layer layer-front" alt="Elementos frontales" decoding="async">
+        <section id="home" class="parallax-hero">
+            
+            <!-- Capas de imágenes (de atrás hacia adelante) -->
+            <img src="assets/home/1_home.png" class="parallax-layer layer-bg" alt="Fondo del escenario" decoding="async">
+            <img src="assets/home/2_home.png" class="parallax-layer layer-mid" alt="Elementos medios" decoding="async">
+            <img src="assets/home/3_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+            <img src="assets/home/4_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+            <img src="assets/home/5_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+            <img src="assets/home/6_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+            <img src="assets/home/7_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+            <img src="assets/home/8_home.png" class="parallax-layer layer-front" alt="Elementos medios" decoding="async">
+            <img src="assets/home/9_home.png" class="parallax-layer layer-front" alt="Elementos frontales" decoding="async">
 
-<div class="hero-content parallax-content">
-        
-    <!-- 1. Aquí insertamos tu nueva imagen central -->
-    <img src="assets/logos/full_stack_d_beige.png" alt="Logotipo o gráfico central" class="hero-center-img" decoding="async">
-        
-    <!-- 2. Mantenemos el botón intacto justo debajo -->
-    <a href="portafolio.html" class="btn-primary" data-i18n="hero_btn">VER MIS PROYECTOS</a>
-</div>
+            <div class="hero-content parallax-content">
+                <img src="assets/logos/full_stack_d_beige.png" alt="Logotipo o gráfico central" class="hero-center-img" decoding="async">
+                <a href="portafolio.html" class="btn-primary" data-i18n="hero_btn">VER MIS PROYECTOS</a>
+            </div>
 
-</section>
+        </section>
 
         <!-- ================= SECCIÓN: SOBRE MÍ ================= -->
-<section class="section about-section reveal" id="about">
-    <div class="container about-container">
-        
-        <!-- Columna Izquierda -->
-        <div class="about-left">
-            <span class="section-label"><span class="slash">/</span> <span data-i18n="about_label">SOBRE MÍ</span></span>
-            <h2 class="about-heading" data-i18n="about_heading">Transformando Operaciones y CX en Software Escalable</h2>
-            <p class="about-desc" data-i18n="about_desc1">
-                El mejor servicio al cliente es un producto digital que no presenta fallos. Tras dominar la gestión de operaciones y el ciclo de vida del usuario, mi enfoque en la ingeniería de software radica en construir sistemas robustos y aplicaciones SaaS que revolucionen la interacción digital. No solo escribo código; arquitecto soluciones centradas en minimizar la fricción cognitiva y maximizar la retención.
-            </p>
-            <a href="about.html" class="about-link"><span data-i18n="about_link">Más sobre mí</span> &rarr;</a>
-        </div>
+        <section class="section about-section radial-glow" id="about">
+            <div class="container about-container">
+                
+                <!-- Columna Izquierda: Entra desde la izquierda -->
+                <div class="about-left reveal-left">
+                    <span class="section-label"><span class="slash">/</span> <span data-i18n="about_label">SOBRE MÍ</span></span>
+                    <h2 class="about-heading" data-i18n="about_heading">Transformando Operaciones y CX en Software Escalable</h2>
+                    <p class="about-desc" data-i18n="about_desc1">
+                        El mejor servicio al cliente es un producto digital que no presenta fallos. Tras dominar la gestión de operaciones y el ciclo de vida del usuario, mi enfoque en la ingeniería de software radica en construir sistemas robustos y aplicaciones SaaS que revolucionen la interacción digital. No solo escribo código; arquitecto soluciones centradas en minimizar la fricción cognitiva y maximizar la retención.
+                    </p>
+                    <a href="about.html" class="about-link"><span data-i18n="about_link">Más sobre mí</span> &rarr;</a>
+                </div>
 
-        <!-- Columna Derecha -->
-        <div class="about-right">
-            <div class="about-stats">
-                <div class="stat-block">
-                    <span class="stat-num">6+</span>
-                    <span class="stat-text" data-i18n="stat_years">Años <br>optimizando CX</span>
+                <!-- Columna Derecha: Entra desde la derecha -->
+                <div class="about-right reveal-right">
+                    <div class="about-stats">
+                        <div class="stat-block">
+                            <span class="stat-num">6+</span>
+                            <span class="stat-text" data-i18n="stat_years">Años <br>optimizando CX</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-text" data-i18n="stat_focus">Enfoque en<br>Escalabilidad</span>
+                        </div>
+                    </div>
+                    <p class="about-desc" data-i18n="about_desc2">
+                        Especializado en ecosistemas Java y JavaScript, desarrollo plataformas B2C y arquitecturas backend seguras. Mi objetivo es cerrar la brecha entre bases de datos relacionales eficientes e interfaces intuitivas de alto rendimiento.
+                    </p>
                 </div>
-                <div class="stat-block">
-                    <span class="stat-num">100%</span>
-                    <span class="stat-text" data-i18n="stat_focus">Enfoque en<br>Escalabilidad</span>
-                </div>
+                
             </div>
-            <p class="about-desc" data-i18n="about_desc2">
-                Especializado en ecosistemas Java y JavaScript, desarrollo plataformas B2C y arquitecturas backend seguras. Mi objetivo es cerrar la brecha entre bases de datos relacionales eficientes e interfaces intuitivas de alto rendimiento.
-            </p>
-        </div>
-        
-    </div>
-</section>
+        </section>
 
         <!-- ================= SECCIÓN: HABILIDADES ================= -->
-<section id="skills" class="skills section reveal">
-    <div class="container">
-        
-        <!-- Encabezado de la sección -->
-        <div class="skills-header">
-            <div class="skills-title-wrapper">
-                <span class="section-label"><span class="slash">/</span> <span data-i18n="skills_label">COMPETENCIAS FUNDAMENTALES</span></span>
-                <h2 class="skills-heading" data-i18n="skills_heading">Pila tecnológica y enfoque de ingeniería</h2>
-            </div>
-        </div>
-
-        <!-- Grid de Tarjetas -->
-        <div class="grid-skills">
-            <!-- Tarjeta 1 -->
-            <div class="skill-card reveal">
-                <div class="skill-icon"><i class="fab fa-java"></i></div>
-                <h3 data-i18n="skill_1_title">Java y Arquitectura de Backend</h3>
-                <p data-i18n="skill_1_desc">Desarrollar sistemas y API del lado del servidor robustos y escalables, utilizando principios orientados a objetos para garantizar una alta disponibilidad y eficiencia lógica.</p>
-                <div class="skill-line"></div>
-            </div>
-            
-            <!-- Tarjeta 2 -->
-            <div class="skill-card reveal">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <h3 data-i18n="skill_2_title">Ingeniería de JavaScript e Interfaz de usuario</h3>
-                <p data-i18n="skill_2_desc">Diseño de experiencias dinámicas y fluidas del lado del cliente. Implementación de manipulaciones del DOM e integraciones seguras de API para minimizar la carga cognitiva.</p>
-                <div class="skill-line"></div>
-            </div>
-            
-            <!-- Tarjeta 3 -->
-            <div class="skill-card reveal">
-                <div class="skill-icon"><i class="fas fa-database"></i></div>
-                <h3 data-i18n="skill_3_title">SQL y Modelado de datos</h3>
-                <p data-i18n="skill_3_desc">Diseñar bases de datos relacionales, ejecutar consultas complejas y garantizar la integridad de los datos para el análisis operativo y las plataformas transaccionales.</p>
-                <div class="skill-line"></div>
-            </div>
-            
-            <!-- Tarjeta 4 -->
-            <div class="skill-card reveal">
-                <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3 data-i18n="skill_4_title">Control de calidad y Desarrollo seguro</h3>
-                <p data-i18n="skill_4_desc">Realizar pruebas de estrés técnicas, depurar flujos de trabajo complejos y aplicar prácticas básicas de ciberseguridad para crear arquitecturas impenetrables.</p>
-                <div class="skill-line"></div>
-            </div>
-        </div>
-        
-    </div>
-</section>
-
-<!-- ================= SECCIÓN: PORTAFOLIO ================= -->
-<section id="portfolio" class="portfolio section reveal">
-    <div class="container">
-        
-        <!-- ENCABEZADO SEPARADO -->
-        <div class="portfolio-intro-top">
-            <span class="section-label"><span class="slash">/</span> <span data-i18n="portfolio_label">MI PORTAFOLIO</span></span>
-            <h2 class="portfolio-heading" data-i18n="portfolio_heading">Echa un vistazo a los últimos proyectos que he realizado</h2>
-            <a href="https://github.com/D-a-v-i-d-Vargas" target="_blank" class="browse-link"><span data-i18n="portfolio_link">Explorar mi GitHub</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- CONTENEDOR GRID DE TARJETAS -->
-        <div class="portfolio-cards-grid">
-            
-            <!-- ====== TARJETA 1: EL TORO FORRAJERO ====== -->
-            <div class="portfolio-card reveal">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag" data-i18n="tag_fullstack">Full Stack Java</span>
-                        <span class="tag" data-i18n="tag_ecommerce">E-Commerce</span>
+        <section id="skills" class="skills section radial-glow">
+            <div class="container">
+                
+                <!-- Encabezado de la sección: Entra desde arriba -->
+                <div class="skills-header reveal-down">
+                    <div class="skills-title-wrapper">
+                        <span class="section-label"><span class="slash">/</span> <span data-i18n="skills_label">COMPETENCIAS FUNDAMENTALES</span></span>
+                        <h2 class="skills-heading" data-i18n="skills_heading">Pila tecnológica y enfoque de ingeniería</h2>
                     </div>
-                    <div class="client-info">
-                        <div class="client-icon"><i class="fas fa-shopping-cart"></i></div>
-                        <span class="client-name" data-i18n="port_1_client">Plataforma B2C</span>
+                </div>
+
+                <!-- Grid de Tarjetas: Intercalado cuadrante por cuadrante -->
+                <div class="grid-skills">
+                    <!-- Tarjeta 1: Entra desde la izquierda -->
+                    <div class="skill-card reveal-left">
+                        <div class="skill-icon"><i class="fab fa-java"></i></div>
+                        <h3 data-i18n="skill_1_title">Java y Arquitectura de Backend</h3>
+                        <p data-i18n="skill_1_desc">Desarrollar sistemas y API del lado del servidor robustos y escalables, utilizando principios orientados a objetos para garantizar una alta disponibilidad y eficiencia lógica.</p>
+                        <div class="skill-line"></div>
                     </div>
-                    <h3 class="card-title" data-i18n="port_1_title">El Toro Forrajero: Plataforma de Comercio electrónico B2C</h3>
-                    <!-- Enlace directo al repo con la nueva clase repo-link -->
-                    <a href="https://github.com/D-a-v-i-d-Vargas/Toro-Forrajero-Ecommerce" target="_blank" class="about-link repo-link">
-                        <span data-i18n="btn_repo">Ver Repositorio</span> &rarr;
+                    
+                    <!-- Tarjeta 2: Entra descendiendo -->
+                    <div class="skill-card reveal-down">
+                        <div class="skill-icon"><i class="fab fa-js"></i></div>
+                        <h3 data-i18n="skill_2_title">Ingeniería de JavaScript e Interfaz de usuario</h3>
+                        <p data-i18n="skill_2_desc">Diseño de experiencias dinámicas y fluidas del lado del cliente. Implementación de manipulaciones del DOM e integraciones seguras de API para minimizar la carga cognitiva.</p>
+                        <div class="skill-line"></div>
+                    </div>
+                    
+                    <!-- Tarjeta 3: Entra ascendiendo -->
+                    <div class="skill-card reveal">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h3 data-i18n="skill_3_title">SQL y Modelado de datos</h3>
+                        <p data-i18n="skill_3_desc">Diseñar bases de datos relacionales, ejecutar consultas complejas y garantizar la integridad de los datos para el análisis operativo y las plataformas transaccionales.</p>
+                        <div class="skill-line"></div>
+                    </div>
+                    
+                    <!-- Tarjeta 4: Entra desde la derecha -->
+                    <div class="skill-card reveal-right">
+                        <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 data-i18n="skill_4_title">Control de calidad y Desarrollo seguro</h3>
+                        <p data-i18n="skill_4_desc">Realizar pruebas de estrés técnicas, depurar flujos de trabajo complejos y aplicar prácticas básicas de ciberseguridad para crear arquitecturas impenetrables.</p>
+                        <div class="skill-line"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN: PORTAFOLIO ================= -->
+        <section id="portfolio" class="portfolio section radial-glow">
+            <div class="container">
+                
+                <!-- Encabezado: Entra desde arriba -->
+                <div class="portfolio-intro-top reveal-down">
+                    <span class="section-label"><span class="slash">/</span> <span data-i18n="portfolio_label">MI PORTAFOLIO</span></span>
+                    <h2 class="portfolio-heading" data-i18n="portfolio_heading">Echa un vistazo a los últimos proyectos que he realizado</h2>
+                    <a href="https://github.com/D-a-v-i-d-Vargas" target="_blank" class="browse-link"><span data-i18n="portfolio_link">Explorar mi GitHub</span> <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- CONTENEDOR GRID DE TARJETAS: Flujo alternado entre tarjetas -->
+                <div class="portfolio-cards-grid">
+                    
+                    <!-- ====== TARJETA 1: EL TORO FORRAJERO (Desde la izquierda) ====== -->
+                    <div class="portfolio-card reveal-left">
+                        <div class="card-content">
+                            <div class="card-tags">
+                                <span class="tag" data-i18n="tag_fullstack">Full Stack Java</span>
+                                <span class="tag" data-i18n="tag_ecommerce">E-Commerce</span>
+                            </div>
+                            <div class="client-info">
+                                <div class="client-icon"><i class="fas fa-shopping-cart"></i></div>
+                                <span class="client-name" data-i18n="port_1_client">Plataforma B2C</span>
+                            </div>
+                            <h3 class="card-title" data-i18n="port_1_title">El Toro Forrajero: Plataforma de Comercio electrónico B2C</h3>
+                            <a href="https://github.com/D-a-v-i-d-Vargas/Toro-Forrajero-Ecommerce" target="_blank" class="about-link repo-link">
+                                <span data-i18n="btn_repo">Ver Repositorio</span> &rarr;
+                            </a>
+                        </div>
+                        <div class="card-image">
+                            <img src="assets/toro_forrajero.png" alt="El Toro Forrajero Ecommerce" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <!-- ====== TARJETA 2: HACKATON PUNTO ADIONA (Desde la derecha) ====== -->
+                    <div class="portfolio-card reveal-right">
+                        <div class="card-content">
+                            <div class="card-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag" data-i18n="tag_hackaton">Hackaton</span>
+                            </div>
+                            <div class="client-info">
+                                <div class="client-icon"><i class="fas fa-stopwatch"></i></div>
+                                <span class="client-name" data-i18n="port_2_client">Prototipado rápido</span>
+                            </div>
+                            <h3 class="card-title" data-i18n="port_2_title">Punto Adiona: Desarrollo Ágil en Hackaton</h3>
+                            <a href="https://github.com/D-a-v-i-d-Vargas/Hackaton-Punto-Adiona" target="_blank" class="about-link repo-link">
+                                <span data-i18n="btn_repo">Ver Repositorio</span> &rarr;
+                            </a>
+                        </div>
+                        <div class="card-image">
+                            <img src="assets/punto_adiona.png" alt="Hackaton Punto Adiona" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+</main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contacto" class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-cta-col reveal-left">
+                    <h2 class="footer-cta-title" data-i18n="footer_cta">¿ESTÁS LISTO<br>PARA EMPEZAR?</h2>
+                    <p class="footer-text" data-i18n="footer_text">¡Hablemos de tu proyecto, enviame un email!</p>
+                    
+                    <a href="mailto:david.vargas011@ebc.edu.mx" class="footer-link-container">
+                        <p data-i18n="nav_contacto" data-text="Contáctame">Contáctame</p>
+                        <svg viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                        </svg>
                     </a>
                 </div>
-                <div class="card-image">
-                    <!-- Sustituye esta imagen por una captura real de tu e-commerce -->
-                    <img src="assets/toro_forrajero.png" alt="El Toro Forrajero Ecommerce" loading="lazy" decoding="async">
+                <div class="footer-links-col reveal-down">
+                    <h4 class="footer-heading">PÁGINAS</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
+                        <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre Mí</a></li>
+                        <li><a href="portafolio.html" data-i18n="nav_portafolio">Portafolio</a></li>
+                        <li><a href="contac.html" data-i18n="nav_contacto">Contáctame</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col reveal-right">
+                    <h4 class="footer-heading">IDIOMAS</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" id="lang-es">Español</a></li>
+                        <li><a href="#" id="lang-en">Inglés</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- ====== TARJETA 2: HACKATON PUNTO ADIONA ====== -->
-            <div class="portfolio-card reveal">
-                <div class="card-content">
-                    <div class="card-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag" data-i18n="tag_hackaton">Hackaton</span>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-icon"><i class="fas fa-stopwatch"></i></div>
-                        <span class="client-name" data-i18n="port_2_client">Prototipado rápido</span>
-                    </div>
-                    <h3 class="card-title" data-i18n="port_2_title">Punto Adiona: Desarrollo Ágil en Hackaton</h3>
-                    <a href="https://github.com/D-a-v-i-d-Vargas/Hackaton-Punto-Adiona" target="_blank" class="about-link repo-link">
-                        <span data-i18n="btn_repo">Ver Repositorio</span> &rarr;
+            <div class="footer-bottom reveal">
+                <div class="footer-copyright">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img">
                     </a>
+                    <span class="copyright-text" data-i18n="footer_rights">Todos los derechos reservados - 2026</span>
                 </div>
-                <div class="card-image">
-                    <img src="assets/punto_adiona.png" alt="Hackaton Punto Adiona" loading="lazy" decoding="async">
+                <div class="footer-socials">
+                    <a href="https://github.com/D-a-v-i-d-Vargas" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- ================= SECCIÓN: FOOTER ================= -->
-<footer id="contacto" class="footer reveal">
-    <div class="container">
-        
-        <!-- Parte Superior: 3 Columnas -->
-        <div class="footer-top">
-            
-            <!-- Columna 1: Llamada a la acción -->
-            <div class="footer-cta-col">
-                <h2 class="footer-cta-title" data-i18n="footer_cta_title">¿ESTÁS LISTO<br>PARA EMPEZAR?</h2>
-                <p class="footer-text">
-                    <span data-i18n="footer_cta_text">¡Hablemos de tu proyecto!</span> <a href="mailto:tu-correo@email.com" class="footer-link" data-i18n="footer_cta_link">Contáctame</a>
-                </p>
-            </div>
-            
-            <!-- Columna 2: Páginas -->
-            <div class="footer-links-col">
-                <h4 class="footer-heading" data-i18n="footer_pages_title">PÁGINAS</h4>
-                <ul class="footer-menu">
-                    <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
-                    <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre mí</a></li>
-                    <li><a href="portafolio.html" data-i18n="nav_portafolio">Contáctame</a></li>
-                </ul>
-            </div>
-            
-            <!-- Columna 3: Idiomas -->
-            <div class="footer-links-col">
-                <h4 class="footer-heading" data-i18n="footer_lang_title">IDIOMAS</h4>
-                <ul class="footer-menu">
-                    <li><a href="#" id="lang-es" data-i18n="footer_lang_es">Español</a></li>
-                    <li><a href="#" id="lang-en" data-i18n="footer_lang_en">Inglés</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- Parte Inferior: Derechos y Redes -->
-        <div class="footer-bottom">
-            
-            <div class="footer-copyright">
-                <a href="index.html" class="footer-logo-link">
-                    <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img" loading="lazy" decoding="async">
-                </a>
-                <span class="copyright-text" data-i18n="footer_copyright">Todos los derechos reservados - 2026</span>
-            </div>
-            
-            <div class="footer-socials">
-                <a href="https://github.com/D-a-v-i-d-Vargas" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            </div>
-
-        </div>
-        
-    </div>
-</footer>
-
-<!-- El atributo 'defer' evita que el script bloquee el renderizado del DOM -->
     <script src="js/index.js" defer></script>
 </body>
 </html>

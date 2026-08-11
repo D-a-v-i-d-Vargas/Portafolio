@@ -495,7 +495,7 @@ h1, h2, h3, h4, h5, h6 {
     9. FOOTER Y BOTÓN ANIMADO (UIVERSE)
    ========================================================================== */
 .footer {
-    background-color: var(--color-fondo-secundario);
+    background-color: var(--color-fondo);
     padding: 50px 0 30px;
     color: var(--color-naranja);
 }
@@ -624,6 +624,19 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     width: 15px;
     transition-delay: 0.2s;
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;  
+    gap: 10px;
+}
+
+.copyright-text {
+    color: var(--color-naranja);
+    font-size: 0.85rem;
+    display: block;
 }
 
 /* ==========================================================================

@@ -121,121 +121,103 @@ const translations = {
     }
 };
 
-// =======================================================================
-// 2. LÓGICA DE INICIALIZACIÓN Y EVENTOS PRINCIPALES
-// =======================================================================
-document.addEventListener("DOMContentLoaded", () => {
-    
-    // Verifica si hay un idioma guardado en el navegador, si no, usa 'es'
-    let currentLang = localStorage.getItem("portfolioLang") || "es";
-    
-    // Aplica el idioma inicial al renderizar la página
-    updateLanguage(currentLang);
+/* ================= LÓGICA PRINCIPAL ================= */
+document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Botón principal de idioma (Navbar) ---
-    const btnIdioma = document.getElementById("btn-idioma");
-    if (btnIdioma) {
-        btnIdioma.addEventListener("click", () => {
-            currentLang = currentLang === "es" ? "en" : "es";
-            localStorage.setItem("portfolioLang", currentLang);
-            updateLanguage(currentLang);
-        });
-    }
+    document.body.classList.add('js-enabled');
 
-    // --- Escuchadores para el Footer ---
-    const btnLangEs = document.getElementById("lang-es");
-    const btnLangEn = document.getElementById("lang-en");
+    // ---------------- 1. SISTEMA DE TRADUCCIÓN E IDIOMA (i18n) ----------------
+    const langToggleBtn = document.getElementById('lang-toggle');
+    const btnEs = document.getElementById('lang-es');
+    const btnEn = document.getElementById('lang-en');
 
-    if (btnLangEs) {
-        btnLangEs.addEventListener("click", (e) => {
-            e.preventDefault();
-            currentLang = "es";
-            localStorage.setItem("portfolioLang", currentLang);
-            updateLanguage(currentLang);
-        });
-    }
-
-    if (btnLangEn) {
-        btnLangEn.addEventListener("click", (e) => {
-            e.preventDefault();
-            currentLang = "en";
-            localStorage.setItem("portfolioLang", currentLang);
-            updateLanguage(currentLang);
-        });
-    }
-
-    // =======================================================================
-    // 3. PERSISTENCIA DE ANIMACIONES EN HERO Y HEADER (PREVIENE REINICIO AL SCROLL)
-    // =======================================================================
-    const animatedElements = document.querySelectorAll(".parallax-layer, .header, .hero-content, .parallax-content");
-    animatedElements.forEach(element => {
-        element.addEventListener("animationend", () => {
-            element.classList.add("animation-done");
-        }, { once: true }); // { once: true } destruye el listener al ejecutarse 1 vez
-    });
-
-    // =======================================================================
-    // 4. LÓGICA DE ANIMACIÓN AL HACER SCROLL (INTERSECTION OBSERVER)
-    // =======================================================================
-    const observerOptions = {
-        root: null,
-        threshold: 0.15 // Se activa cuando el 15% del elemento entra en pantalla
-    };
-
-    const revealOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                // Deja de observar el elemento para que la animación solo ocurra una vez
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Buscar todos los elementos con la clase .reveal y ponerlos a observar
-    document.querySelectorAll(".reveal").forEach(element => {
-        revealOnScroll.observe(element);
-    });
-
-    // =======================================================================
-    // 5. LÓGICA DEL MENÚ MÓVIL (HAMBURGUESA)
-    // =======================================================================
-    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-    const navRight = document.querySelector(".nav-right");
-    
-    if (mobileMenuBtn && navRight) {
-        mobileMenuBtn.addEventListener("click", () => {
-            navRight.classList.toggle("active");
-            
-            const icon = mobileMenuBtn.querySelector("i");
-            if (icon) {
-                if (icon.classList.contains("fa-bars")) {
-                    icon.classList.remove("fa-bars");
-                    icon.classList.add("fa-times");
-                } else {
-                    icon.classList.remove("fa-times");
-                    icon.classList.add("fa-bars");
+    function setLanguage(lang) {
+        if (!translations[lang]) return;
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+                element.innerHTML = translations[lang][key];
+                
+                /* Inyecté esta línea clave: si el elemento tiene un atributo "data-text"
+                (usado por nuestro nuevo botón animado en CSS), también lo actualiza 
+                dinámicamente para que la animación CSS muestre el idioma correcto.*/
+                if (element.hasAttribute('data-text')) {
+                    element.setAttribute('data-text', translations[lang][key]);
                 }
             }
+        });
+        if (langToggleBtn) {
+            langToggleBtn.textContent = lang === 'es' ? 'ENGLISH' : 'ESPAÑOL';
+        }
+        localStorage.setItem('preferred_lang', lang);
+    }
+
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('preferred_lang') || 'es';
+            setLanguage(currentLang === 'es' ? 'en' : 'es');
+        });
+    }
+
+    if (btnEs) btnEs.addEventListener('click', (e) => { e.preventDefault(); setLanguage('es'); });
+    if (btnEn) btnEn.addEventListener('click', (e) => { e.preventDefault(); setLanguage('en'); });
+
+    setLanguage(localStorage.getItem('preferred_lang') || 'es');
+
+    // ---------------- 2. CARRUSEL DE HERRAMIENTAS ----------------
+    const track = document.getElementById('tools-track');
+    const prevBtn = document.getElementById('tools-prev');
+    const nextBtn = document.getElementById('tools-next');
+
+    if (track && prevBtn && nextBtn) {
+        const scrollAmount = 320;
+        nextBtn.addEventListener('click', () => track.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+        prevBtn.addEventListener('click', () => track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+    }
+
+    // ---------------- 3. ANIMACIÓN DE APARICIÓN EN SCROLL MULTIDIRECCIONAL ----------------
+    const revealElements = document.querySelectorAll('.reveal, .reveal-down, .reveal-left, .reveal-right');
+
+    if ('IntersectionObserver' in window && revealElements.length > 0) {
+        const observerOptions = { threshold: 0.15 };
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+        revealElements.forEach(el => el.classList.add('active'));
+    }
+
+    // ---------------- 4. NAVEGACIÓN MÓVIL (MENÚ HAMBURGUESA) ----------------
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLeft = document.querySelector('.nav-left');
+    const navRight = document.querySelector('.nav-right');
+
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('open');
+            if (navLeft) navLeft.classList.toggle('active');
+            if (navRight) navRight.classList.toggle('active');
         });
     }
 });
 
-// =======================================================================
-// 6. MOTOR DE RENDERIZADO DEL DOM (i18n)
-// =======================================================================
-function updateLanguage(lang) {
-    const elements = document.querySelectorAll("[data-i18n]");
-    
-    elements.forEach(element => {
-        const key = element.getAttribute("data-i18n");
-        if (translations[lang] && translations[lang][key]) {
-            element.innerHTML = translations[lang][key];
-        }
-    });
+// ---------------- 5. EFECTO FOCO DINÁMICO (RADIAL GLOW SPOTLIGHT) ----------------
+const glowSections = document.querySelectorAll('.radial-glow');
 
-    const btnIdioma = document.getElementById("btn-idioma");
-    if (btnIdioma && translations[lang]["btn_idioma"]) {
-        btnIdioma.textContent = translations[lang]["btn_idioma"];
-    }
-}
+glowSections.forEach(section => {
+    section.addEventListener('mousemove', (e) => {
+        const rect = section.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        section.style.setProperty('--mouse-x', `${x}px`);
+        section.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
