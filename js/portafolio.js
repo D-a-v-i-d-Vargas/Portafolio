@@ -25,6 +25,8 @@ const translations = {
         footer_text: "¡Hablemos de tu proyecto, enviame un email!",
         footer_pages: "PÁGINAS",
         footer_langs: "IDIOMAS",
+        footer_lang_es: "Español",
+        footer_lang_en: "Inglés",
         footer_rights: "Todos los derechos reservados - 2026"
     },
     en: {
@@ -50,6 +52,8 @@ const translations = {
         footer_text: "Let's talk about your project, send me an email!",
         footer_pages: "PAGES",
         footer_langs: "LANGUAGES",
+        footer_lang_es: "Spanish",
+        footer_lang_en: "English",
         footer_rights: "All rights reserved - 2026"
     }
 };

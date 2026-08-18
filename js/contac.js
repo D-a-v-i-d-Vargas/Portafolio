@@ -21,6 +21,8 @@ const translations = {
         footer_text: "¡Hablemos de tu proyecto, enviame un email!",
         footer_pages: "PÁGINAS",
         footer_languages: "IDIOMAS",
+        footer_lang_es: "Español",
+        footer_lang_en: "Inglés",
         footer_rights: "Todos los derechos reservados - 2026",
         /* Nuevas traducciones para las alertas */
         alert_success: "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo lo antes posible.",
@@ -47,6 +49,8 @@ const translations = {
         footer_text: "Let’s talk about your project, send me an email!",
         footer_pages: "PAGES",
         footer_languages: "LANGUAGES",
+        footer_lang_es: "Spanish",
+        footer_lang_en: "English",
         footer_rights: "All rights reserved - 2026",
         /* Nuevas traducciones para las alertas */
         alert_success: "Message sent successfully! We will get in touch with you as soon as possible.",

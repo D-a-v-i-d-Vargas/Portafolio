@@ -49,6 +49,10 @@ const translations = {
         tool_4_desc: "Pruebas, validación de endpoints y documentación de arquitecturas API RESTful.",
         tool_5_desc: "Gestión de backlog, seguimiento de sprints y priorización bajo metodología Scrum.",
         tool_6_desc: "Inspección de prototipos, diseño de interfaces y traducción precisa de UI/UX a código.",
+        footer_pages_title: "PÁGINAS",
+        footer_lang_title: "IDIOMAS",
+        footer_lang_es: "Español",
+        footer_lang_en: "Inglés",
         footer_cta: "¡CONSTRUYAMOS ALGO ESCALABLE!",
         footer_text:"¡Hablemos de tu proyecto, enviame un email!",
         footer_rights: "Todos los derechos reservados - 2026"
@@ -102,6 +106,10 @@ const translations = {
         tool_4_desc: "Testing, endpoint validation, and RESTful API architecture documentation.",
         tool_5_desc: "Backlog management, sprint tracking, and prioritization under Scrum methodology.",
         tool_6_desc: "Prototype inspection, interface design, and accurate UI/UX translation into code.",
+        footer_pages_title: "PAGES",
+        footer_lang_title: "LANGUAGES",
+        footer_lang_es: "Spanish",
+        footer_lang_en: "English",
         footer_cta: "LET'S BUILD SOMETHING SCALABLE!",
         footer_text:"Let’s talk about your project, send me an email!",
         footer_rights: "All rights reserved - 2026"
