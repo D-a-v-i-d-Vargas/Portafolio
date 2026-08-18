@@ -1,136 +1,129 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - David Vargas</title>
-    <meta name="description" content="Portafolio de David Vargas, Desarrollador Web.">
+    <meta name="description" content="Portafolio de proyectos de David Vargas, Desarrollador Web Full Stack.">
     
-    <!-- Hoja de Estilos -->
+    <link rel="icon" type="image/png" href="assets/logos/imagotipo.png">
     <link rel="stylesheet" href="css/portafolio.css">
-    
-    <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </head>
-    <body>
+</head>
+<body>
 
-    <!-- ================= HEADER / NAVEGACIÓN ================= -->
+    <!-- ================= HEADER ================= -->
     <header class="header">
         <div class="container header-container">
-        
-        <!-- Navegación Izquierda -->
-        <nav class="nav-group nav-left">
-            <a href="index.html" class="nav-link" data-i18n="nav_inicio">Inicio</a>
-            <a href="about.html" class="nav-link" data-i18n="nav_sobre_mi">Sobre Mí</a>
-        </nav>
+            <nav class="nav-group nav-left">
+                <a href="index.html" class="nav-link" data-i18n="nav_inicio">Inicio</a>
+                <a href="about.html" class="nav-link" data-i18n="nav_sobre_mi">Sobre Mí</a>
+            </nav>
 
-        <!-- Logotipo Centro -->
-        <div class="nav-group nav-center">
-            <a href="index.html" class="logo">
-            <img src="assets/logos/logo_negro.png" alt="Logotipo David Vargas" class="logo-img">
-            </a>
-        </div>
+            <div class="nav-group nav-center">
+                <a href="index.html" class="logo">
+                    <!-- Asegúrate de usar un logo claro/blanco si el fondo es negro -->
+                    <img src="assets/logos/logo_negro.png" alt="Logotipo David Vargas" class="logo-img">
+                </a>
+            </div>
 
-        <!-- Navegación Derecha -->
-        <nav class="nav-group nav-right">
-            <a href="portafolio.html" class="nav-link" data-i18n="nav_portafolio">Portafolio</a>
-            <a href="contac.html" class="nav-link" data-i18n="nav_contacto">Contáctame</a>
-            <button id="lang-toggle" class="lang-btn lang-btn">ENGLISH</button>
-        </nav>
-        
-        <!-- Botón Menú Hamburguesa para Móviles -->
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-        </button>
-        
+            <nav class="nav-group nav-right">
+                <a href="portafolio.html" class="nav-link" data-i18n="nav_portafolio">Portafolio</a>
+                <a href="contac.html" class="nav-link" data-i18n="nav_contacto">Contáctame</a>
+                <button id="lang-toggle" class="btn-secondary lang-btn">ENGLISH</button>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <!-- ================= CONTENIDO PRINCIPAL ================= -->
-    <main>
+    <!-- Se aplica la clase radial-glow a MAIN para contener el efecto solo en el cuerpo -->
+    <main class="radial-glow">
 
         <!-- Hero / Fondo Parallax -->
         <section id="home" class="parallax-hero">
-        <img src="assets/portafolio/port_1.png" class="parallax-layer layer-bg" alt="Fondo escenario">
-        <img src="assets/portafolio/port_2.png" class="parallax-layer layer-mid" alt="Capa media 1">
-        <img src="assets/portafolio/port_3.png" class="parallax-layer layer-front" alt="Capa media 2">
-        <img src="assets/portafolio/port_4.png" class="parallax-layer layer-front" alt="Capa frontal">
-
-        <div class="hero-bio-overlay container"></div>
+            <img src="assets/portafolio/port_1.png" class="parallax-layer layer-bg" alt="Fondo escenario">
+            <img src="assets/portafolio/port_2.png" class="parallax-layer layer-mid" alt="Capa media 1">
+            <img src="assets/portafolio/port_3.png" class="parallax-layer layer-front" alt="Capa media 2">
+            <img src="assets/portafolio/port_4.png" class="parallax-layer layer-front" alt="Capa frontal">
+            <div class="hero-bio-overlay container"></div>
         </section>
 
         <!-- Sección: Portafolio de Proyectos -->
         <section id="portafolio-sec" class="portfolio-section reveal">
-        <div class="container">
-            
-            <!-- Encabezado de la Sección -->
-            <div class="portfolio-header">
-            <div class="accent-line"></div>
-            <h1 class="portfolio-title" data-i18n="port_title">Portafolio</h1>
-            <p class="portfolio-subtitle" data-i18n="port_subtitle">
-                Proyectos destacados donde he aplicado soluciones de código escalable, arquitectura frontend y optimización de experiencia de usuario.
-            </p>
+            <div class="container">
+                
+                <!-- Encabezado de la Sección -->
+                <div class="portfolio-header">
+                    <div class="accent-line"></div>
+                    <h1 class="portfolio-title" data-i18n="port_title">Portafolio</h1>
+                    <p class="portfolio-subtitle" data-i18n="port_subtitle">
+                        Proyectos destacados donde he aplicado soluciones de código escalable, arquitectura frontend y optimización de experiencia de usuario.
+                    </p>
+                </div>
+
+                <!-- Rejilla de Proyectos (2 Columnas) -->
+                <div class="portfolio-grid">
+
+                    <!-- PROYECTO 1: TORO FORRAJERO -->
+                    <article class="project-card reveal-left">
+                        <div class="card-top">
+                            <div class="brand-info">
+                                <span class="brand-icon"><i class="fas fa-store"></i></span>
+                                <span class="brand-name">Toro Forrajero</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag" data-i18n="tag_js">JavaScript</span>
+                                <span class="tag" data-i18n="tag_ecommerce">E-Commerce</span>
+                            </div>
+                        </div>
+
+                        <h2 class="project-title" data-i18n="proj_toro_title">
+                            Plataforma E-commerce B2C & Catálogo Digital
+                        </h2>
+
+                        <div class="project-media">
+                            <a href="https://github.com/D-a-v-i-d-Vargas/Toro-Forrajero-Ecommerce" target="_blank" aria-label="Ver Proyecto Toro Forrajero">
+                                <img src="assets/toro_forrajero.png" alt="Previsualización Toro Forrajero" loading="lazy">
+                                <div class="media-overlay">
+                                    <span data-i18n="proj_view_btn">Ver Proyecto &rarr;</span>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- PROYECTO 2: PUNTO ADIONA -->
+                    <article class="project-card reveal-right">
+                        <div class="card-top">
+                            <div class="brand-info">
+                                <span class="brand-icon"><i class="fas fa-chart-line"></i></span>
+                                <span class="brand-name">Punto Adiona</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag" data-i18n="tag_java">Java Full Stack</span>
+                                <span class="tag" data-i18n="tag_sql">SQL & Dashboard</span>
+                            </div>
+                        </div>
+
+                        <h2 class="project-title" data-i18n="proj_adiona_title">
+                            Sistema Web de Gestión Operativa & Métricas CX
+                        </h2>
+
+                        <div class="project-media">
+                            <a href="https://github.com/D-a-v-i-d-Vargas/Hackaton-Punto-Adiona" target="_blank" aria-label="Ver Proyecto Punto Adiona">
+                                <img src="assets/punto_adiona.png" alt="Previsualización Punto Adiona" loading="lazy">
+                                <div class="media-overlay">
+                                    <span data-i18n="proj_view_btn">Ver Proyecto &rarr;</span>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
             </div>
-
-            <!-- Rejilla de Proyectos (2 Columnas) -->
-            <div class="portfolio-grid">
-
-            <!-- PROYECTO 1: TORO FORRAJERO -->
-            <article class="project-card">
-                <div class="card-top">
-                <div class="brand-info">
-                    <span class="brand-icon"><i class="fas fa-store"></i></span>
-                    <span class="brand-name">Toro Forrajero</span>
-                </div>
-                <div class="project-tags">
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">E-Commerce</span>
-                </div>
-                </div>
-
-                <h2 class="project-title" data-i18n="proj_toro_title">
-                Plataforma E-commerce B2C & Catálogo Digital
-                </h2>
-
-                <div class="project-media">
-                <a href="https://github.com/D-a-v-i-d-Vargas/Toro-Forrajero-Ecommerce" target="_blank" aria-label="Ver Proyecto Toro Forrajero">
-                    <img src="assets/toro_forrajero.png" alt="Previsualización Toro Forrajero" loading="lazy">
-                    <div class="media-overlay">
-                    <span data-i18n="proj_view_btn">Ver Proyecto &rarr;</span>
-                    </div>
-                </a>
-                </div>
-            </article>
-
-            <!-- PROYECTO 2: PUNTO ADIONA -->
-            <article class="project-card">
-                <div class="card-top">
-                <div class="brand-info">
-                    <span class="brand-icon"><i class="fas fa-chart-line"></i></span>
-                    <span class="brand-name">Punto Adiona</span>
-                </div>
-                <div class="project-tags">
-                    <span class="tag">Java Full Stack</span>
-                    <span class="tag">SQL & Dashboard</span>
-                </div>
-                </div>
-
-                <h2 class="project-title" data-i18n="proj_adiona_title">
-                Sistema Web de Gestión Operativa & Métricas CX
-                </h2>
-
-                <div class="project-media">
-                <a href="https://github.com/D-a-v-i-d-Vargas/Hackaton-Punto-Adiona" target="_blank" aria-label="Ver Proyecto Punto Adiona">
-                    <img src="assets/punto_adiona.png" alt="Previsualización Punto Adiona" loading="lazy">
-                    <div class="media-overlay">
-                    <span data-i18n="proj_view_btn">Ver Proyecto &rarr;</span>
-                    </div>
-                </a>
-                </div>
-            </article>
-
-            </div>
-        </div>
         </section>
 
     </main>
@@ -138,58 +131,51 @@
     <!-- ================= FOOTER ================= -->
     <footer id="contacto" class="footer">
         <div class="container footer-container">
-        
-        <!-- Parte Superior -->
-        <div class="footer-top">
-            
-            <!-- Columna 1: CTA -->
-            <div class="footer-cta-col">
-            <h2 class="footer-cta-title" data-i18n="footer_cta">¡CONSTRUYAMOS ALGO ESCALABLE!</h2>
-            <p class="footer-text">
-                ¡Hablemos de tu proyecto! <a href="mailto:david.vargas@email.com" class="footer-link" data-i18n="nav_contacto">Contáctame</a>
-            </p>
+            <div class="footer-top">
+                <div class="footer-cta-col reveal-left">
+                    <h2 class="footer-cta-title" data-i18n="footer_cta">¡CONSTRUYAMOS ALGO ESCALABLE!</h2>
+                    <p class="footer-text" data-i18n="footer_text">¡Hablemos de tu proyecto, enviame un email!</p>
+                    
+                    <a href="mailto:david.vargas011@ebc.edu.mx" class="footer-link-container">
+                        <p data-i18n="nav_contacto" data-text="Contáctame">Contáctame</p>
+                        <svg viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-links-col reveal-down">
+                    <h4 class="footer-heading" data-i18n="footer_pages">PÁGINAS</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
+                        <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre Mí</a></li>
+                        <li><a href="portafolio.html" data-i18n="nav_portafolio">Portafolio</a></li>
+                        <li><a href="contac.html" data-i18n="nav_contacto">Contáctame</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col reveal-right">
+                    <h4 class="footer-heading" data-i18n="footer_langs">IDIOMAS</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#" id="lang-es">Español</a></li>
+                        <li><a href="#" id="lang-en">Inglés</a></li>
+                    </ul>
+                </div>
             </div>
-            
-            <!-- Columna 2: Menú Páginas -->
-            <div class="footer-links-col">
-            <h4 class="footer-heading">PÁGINAS</h4>
-            <ul class="footer-menu">
-                <li><a href="index.html" data-i18n="nav_inicio">Inicio</a></li>
-                <li><a href="about.html" data-i18n="nav_sobre_mi">Sobre Mí</a></li>
-                <li><a href="portafolio.html" data-i18n="nav_portafolio">Portafolio</a></li>
-            </ul>
+            <div class="footer-bottom reveal">
+                <div class="footer-copyright">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img">
+                    </a>
+                    <span class="copyright-text" data-i18n="footer_rights">Todos los derechos reservados - 2026</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/D-a-v-i-d-Vargas" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
-
-            <!-- Columna 3: Selección de Idioma -->
-            <div class="footer-links-col">
-            <h4 class="footer-heading">IDIOMAS</h4>
-            <ul class="footer-menu">
-                <li><a href="#" id="lang-es">Español</a></li>
-                <li><a href="#" id="lang-en">Inglés</a></li>
-            </ul>
-            </div>
-
-        </div>
-
-        <!-- Parte Inferior -->
-        <div class="footer-bottom">
-            <div class="footer-copyright">
-            <a href="index.html" class="footer-logo-link">
-                <img src="assets/logos/logo_blanco.png" alt="Logo David Vargas" class="footer-logo-img">
-            </a>
-            <span class="copyright-text" data-i18n="footer_rights">Todos los derechos reservados - 2026</span>
-            </div>
-            
-            <div class="footer-socials">
-            <a href="https://github.com/D-a-v-i-d-Vargas" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/david-vargas-3700951bb/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-
         </div>
     </footer>
 
     <!-- Script Principal -->
     <script src="js/portafolio.js"></script>
-    </body>
-    </html>
+</body>
+</html>

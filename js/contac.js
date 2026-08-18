@@ -21,7 +21,10 @@ const translations = {
         footer_text: "¡Hablemos de tu proyecto, enviame un email!",
         footer_pages: "PÁGINAS",
         footer_languages: "IDIOMAS",
-        footer_rights: "Todos los derechos reservados - 2026"
+        footer_rights: "Todos los derechos reservados - 2026",
+        /* Nuevas traducciones para las alertas */
+        alert_success: "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo lo antes posible.",
+        alert_error: "Hubo un error al enviar tu mensaje. Por favor, inténtalo nuevamente."
     },
     en: {
         nav_inicio: "Home",
@@ -44,7 +47,10 @@ const translations = {
         footer_text: "Let’s talk about your project, send me an email!",
         footer_pages: "PAGES",
         footer_languages: "LANGUAGES",
-        footer_rights: "All rights reserved - 2026"
+        footer_rights: "All rights reserved - 2026",
+        /* Nuevas traducciones para las alertas */
+        alert_success: "Message sent successfully! We will get in touch with you as soon as possible.",
+        alert_error: "There was an error sending your message. Please try again."
     }
 };
 
@@ -61,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setLanguage(lang) {
         if (!translations[lang]) return;
 
-        // A. Traducir contenido interno de texto (HTML / TextContent)
+        // A. Traducir contenido interno de texto
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (translations[lang][key]) {
@@ -73,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // B. Traducir los atributos placeholder de los Inputs y Textareas
+        // B. Traducir los atributos placeholder
         document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
             const key = element.getAttribute('data-i18n-placeholder');
             if (translations[lang][key]) {
@@ -97,21 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnEs) btnEs.addEventListener('click', (e) => { e.preventDefault(); setLanguage('es'); });
     if (btnEn) btnEn.addEventListener('click', (e) => { e.preventDefault(); setLanguage('en'); });
 
-    // Cargar idioma guardado o predeterminado
     setLanguage(localStorage.getItem('preferred_lang') || 'es');
 
-    // ---------------- 2. CARRUSEL DE HERRAMIENTAS ----------------
-    const track = document.getElementById('tools-track');
-    const prevBtn = document.getElementById('tools-prev');
-    const nextBtn = document.getElementById('tools-next');
-
-    if (track && prevBtn && nextBtn) {
-        const scrollAmount = 320;
-        nextBtn.addEventListener('click', () => track.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
-        prevBtn.addEventListener('click', () => track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
-    }
-
-    // ---------------- 3. ANIMACIÓN DE APARICIÓN EN SCROLL MULTIDIRECCIONAL ----------------
+    // ---------------- 2. ANIMACIÓN DE APARICIÓN EN SCROLL MULTIDIRECCIONAL ----------------
     const revealElements = document.querySelectorAll('.reveal, .reveal-down, .reveal-left, .reveal-right');
 
     if ('IntersectionObserver' in window && revealElements.length > 0) {
@@ -130,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach(el => el.classList.add('active'));
     }
 
-    // ---------------- 4. NAVEGACIÓN MÓVIL (MENÚ HAMBURGUESA) ----------------
+    // ---------------- 3. NAVEGACIÓN MÓVIL (MENÚ HAMBURGUESA) ----------------
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const navLeft = document.querySelector('.nav-left');
     const navRight = document.querySelector('.nav-right');
@@ -142,6 +136,77 @@ document.addEventListener('DOMContentLoaded', () => {
             if (navRight) navRight.classList.toggle('active');
         });
     }
+
+    // ---------------- 4. MANEJO DEL FORMULARIO Y ALERTA (TOAST) ----------------
+    const contactForm = document.getElementById('contact-form');
+    const customAlert = document.getElementById('custom-alert');
+    const alertMessage = document.getElementById('alert-message');
+    const alertIcon = document.getElementById('alert-icon');
+    const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+
+    function showCustomAlert(type) {
+        // Obtener el idioma actual para mostrar el mensaje correcto
+        const currentLang = localStorage.getItem('preferred_lang') || 'es';
+        const messageKey = type === 'success' ? 'alert_success' : 'alert_error';
+
+        // Inyectar el texto traducido
+        alertMessage.textContent = translations[currentLang][messageKey];
+        
+        // Cambiar estilos de la tarjeta dependiendo del resultado
+        customAlert.className = `custom-alert show ${type}`;
+        
+        if (type === 'success') {
+            alertIcon.className = 'fas fa-check-circle';
+        } else {
+            alertIcon.className = 'fas fa-exclamation-triangle';
+        }
+
+        // Ocultar automáticamente después de 5 segundos
+        setTimeout(() => {
+            customAlert.classList.remove('show');
+        }, 5000);
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // Cambiar estado visual del botón a "Cargando..."
+            const originalBtnContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Enviando...';
+            submitBtn.disabled = true;
+
+            // =================================================================
+            // INYECCIÓN EMAILJS: Descomenta esto cuando tengas tus IDs reales
+            // =================================================================
+            /*
+            emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', this)
+                .then(() => {
+                    showCustomAlert('success');
+                    contactForm.reset();
+                }, (error) => {
+                    console.error('Error de EmailJS:', error);
+                    showCustomAlert('error');
+                })
+                .finally(() => {
+                    // Restaurar el botón independientemente del resultado
+                    submitBtn.innerHTML = originalBtnContent;
+                    submitBtn.disabled = false;
+                });
+            */
+
+            // =================================================================
+            // SIMULACIÓN (Borra este bloque setTimeout cuando uses el código real de arriba)
+            // =================================================================
+            setTimeout(() => {
+                showCustomAlert('success'); // Cambia a 'error' para probar la alerta de fallo
+                contactForm.reset();
+                submitBtn.innerHTML = originalBtnContent;
+                submitBtn.disabled = false;
+            }, 1500); 
+        });
+    }
+
 });
 
 // ---------------- 5. EFECTO FOCO DINÁMICO (RADIAL GLOW SPOTLIGHT) ----------------

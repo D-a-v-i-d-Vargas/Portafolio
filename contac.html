@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - David Vargas - Portafolio</title>
     <meta name="description" content="Portafolio de David Vargas, Desarrollador Web. Sección de contacto.">
-    
+
+    <link rel="icon" type="image/png" href="assets/logos/imagotipo.png">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -18,7 +19,6 @@
 </head>
 <body>
 
-    <!-- ================= HEADER ================= -->
     <header class="header">
         <div class="container header-container">
             <nav class="nav-group nav-left">
@@ -44,9 +44,7 @@
         </div>
     </header>
         
-    <!-- ================= MAIN BODY ================= -->
     <main>
-        <!-- ================= HERO PARALLAX ================= -->
         <section id="home" class="parallax-hero">
             <img src="assets/contac/contacto_1.png" class="parallax-layer layer-bg" alt="Fondo del escenario">
             <img src="assets/contac/contacto_2.png" class="parallax-layer layer-mid" alt="Elementos medios">
@@ -60,7 +58,6 @@
             <div class="hero-bio-overlay container"></div>
         </section>
 
-        <!-- ================= SECCIÓN DE CONTACTO ================= -->
         <section class="section contact-section radial-glow">
             <div class="container">
                 
@@ -88,7 +85,7 @@
                     </div>
 
                     <div class="contact-form-card reveal">
-                        <form class="contact-form" action="#" method="POST">
+                        <form id="contact-form" class="contact-form" action="#" method="POST">
                             
                             <div class="form-group">
                                 <label for="name" class="form-label" data-i18n="form_name">Ingresa tu nombre</label>
@@ -123,7 +120,6 @@
         </section>
     </main>
 
-    <!-- ================= FOOTER ================= -->
     <footer id="contacto" class="footer">
         <div class="container footer-container">
             <div class="footer-top">
@@ -169,6 +165,11 @@
             </div>
         </div>
     </footer>
+
+    <div id="custom-alert" class="custom-alert">
+        <i id="alert-icon" class="fas fa-check-circle"></i>
+        <span id="alert-message">Mensaje base</span>
+    </div>
 
     <script src="js/contac.js"></script>
 </body>

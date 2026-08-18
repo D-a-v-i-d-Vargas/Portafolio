@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-    3. ESTRUCTURA CONTENEDORA Y FONDOS AISLADOS (EDITABLES)
+    3. ESTRUCTURA CONTENEDORA Y FONDOS AISLADOS
    ========================================================================== */
 .container {
     width: 90%;
@@ -100,19 +100,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .section {
     padding: 80px 0;
-}
-
-.bg-light { 
-    background-color: var(--color-fondo-secundario); 
-}
-
-.bg-dark { 
-    background-color: var(--color-fondo-secundario); 
-}
-
-.bg-dark-alt { 
-    background-color: var(--color-fondo-secundario); 
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* ==========================================================================
@@ -182,22 +169,11 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1; 
 }
 
-.nav-left { 
-    justify-content: flex-start; 
-}
+.nav-left { justify-content: flex-start; }
+.nav-right { justify-content: flex-end; }
+.nav-center { display: flex; justify-content: center; }
 
-.nav-right { 
-    justify-content: flex-end; 
-}
-
-.nav-center { 
-    display: flex; 
-    justify-content: center; 
-}
-
-.logo {
-    display: inline-block;
-}
+.logo { display: inline-block; }
 
 .logo-img {
     height: 45px;
@@ -267,14 +243,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes subirCapa {
-    0% { 
-        opacity: 0; 
-        transform: translateY(80px); 
-    }
-    100% { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
+    0% { opacity: 0; transform: translateY(80px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 .parallax-layer {
@@ -308,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
     SECCIÓN DE CONTACTO Y FORMULARIO
    ========================================================================== */
 .contact-section {
-    background-color: transparent; /* Permite ver el resplandor */
+    background-color: transparent;
     padding: 60px 0 120px 0;
     color: var(--color-blanco);
     position: relative;
@@ -342,7 +312,6 @@ h1, h2, h3, h4, h5, h6 {
     align-items: start;
 }
 
-/* Columna Izquierda */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -390,9 +359,8 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 20px var(--color-cafe);
 }
 
-/* Columna Derecha (Tarjeta del Formulario) */
 .contact-form-card {
-    background: rgba(24, 28, 39, 0.7); /* Transparencia para el glassmorphism */
+    background: rgba(24, 28, 39, 0.7); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -446,10 +414,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-input:focus {
     border-bottom-color: var(--color-naranja);
-    padding-left: 10px; /* Efecto sutil al enfocar */
+    padding-left: 10px; 
 }
 
-/* Fix autocompletado navegadores */
 .form-input:-webkit-autofill,
 .form-input:-webkit-autofill:hover, 
 .form-input:-webkit-autofill:focus {
@@ -534,8 +501,14 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 25px; 
 }
 
-.footer-logo-img { 
-    height: 35px; 
+.footer-logo-img {
+    height: 35px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    opacity: 1;
 }
 
 .footer-socials { 
@@ -640,7 +613,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-    10. ANIMACIONES DE SCROLL ALTERNADAS Y DE DIRECCIÓN (.reveal-*)
+    10. ANIMACIONES DE SCROLL (.reveal-*)
    ========================================================================== */
 .reveal, .reveal-down, .reveal-left, .reveal-right {
     opacity: 1;
@@ -649,25 +622,10 @@ h1, h2, h3, h4, h5, h6 {
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-body.js-enabled .reveal:not(.active) { 
-    opacity: 0; 
-    transform: translateY(40px); 
-}
-
-body.js-enabled .reveal-down:not(.active) { 
-    opacity: 0; 
-    transform: translateY(-40px); 
-}
-
-body.js-enabled .reveal-left:not(.active) { 
-    opacity: 0; 
-    transform: translateX(-50px); 
-}
-
-body.js-enabled .reveal-right:not(.active) { 
-    opacity: 0; 
-    transform: translateX(50px); 
-}
+body.js-enabled .reveal:not(.active) { opacity: 0; transform: translateY(40px); }
+body.js-enabled .reveal-down:not(.active) { opacity: 0; transform: translateY(-40px); }
+body.js-enabled .reveal-left:not(.active) { opacity: 0; transform: translateX(-50px); }
+body.js-enabled .reveal-right:not(.active) { opacity: 0; transform: translateX(50px); }
 
 body.js-enabled .reveal.active,
 body.js-enabled .reveal-down.active,
@@ -678,7 +636,74 @@ body.js-enabled .reveal-right.active {
 }
 
 /* ==========================================================================
-    DISEÑO RESPONSIVO UNIFICADO
+    11. ALERTA PERSONALIZADA (TOAST NOTIFICATION)
+   ========================================================================== */
+.custom-alert {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    
+    /* Efecto Glassmorphism similar al formulario */
+    background: rgba(24, 28, 39, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid transparent; 
+    
+    color: var(--color-texto);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 9999;
+    
+    /* Configuración inicial oculta */
+    opacity: 0;
+    transform: translateY(40px);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    font-family: var(--font-parrafos);
+    max-width: 420px;
+}
+
+/* Clase dinámica que inyecta JS */
+.custom-alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Clases dinámicas de éxito y error */
+.custom-alert.success {
+    border-left-color: var(--color-naranja);
+}
+
+.custom-alert.error {
+    border-left-color: #e74c3c;
+}
+
+.custom-alert i {
+    font-size: 1.8rem;
+}
+
+.custom-alert.success i {
+    color: var(--color-naranja);
+}
+
+.custom-alert.error i {
+    color: #e74c3c;
+}
+
+.custom-alert span {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+    12. DISEÑO RESPONSIVO UNIFICADO
    ========================================================================== */
 @media (max-width: 992px) {
     .contact-grid {
@@ -696,10 +721,6 @@ body.js-enabled .reveal-right.active {
 }
 
 @media (max-width: 768px) {
-    .elegant-header {
-        padding: 15px 0;
-    }
-
     .mobile-menu-btn { 
         display: block; 
     }
@@ -736,5 +757,12 @@ body.js-enabled .reveal-right.active {
         flex-direction: column;
         gap: 25px;
         text-align: center;
+    }
+    
+    .custom-alert {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: 100%;
     }
 }
